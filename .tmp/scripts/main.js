@@ -1,4 +1,6 @@
-function initSlider(){
+'use strict';
+
+function initSlider() {
     $('.imgs-slider').slick({
         dots: false,
         infinite: true,
@@ -12,5 +14,6 @@ function initSlider(){
 
 $(document).on('ready', function () {
     initSlider();
-    console.log('algo')
+    console.log('algo');
 });
+//# sourceMappingURL=main.js.map

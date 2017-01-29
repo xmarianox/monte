@@ -49,6 +49,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -59,15 +60,28 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+      <!-- Picturefill -->
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script async src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
+    <script async src="http://scottjehl.github.io/picturefill/dist/plugins/mutation/pf.mutation.min.js"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
       <header>
-        <div>
-            <h1></h1>
-            <div><span></span></div> <!-- Menu btn -->
+        <div class="botonera-mobile">
+            <div class="cabecera">
+                <h1>Monte</h1>
+                <ul>
+                    <li><a href="">esp</a></li>
+                    <li><a href="">eng</a></li>
+                </ul>
+                <div><a href="javascript:;" id="toggle_menu" class="btn-hamburger"><span class="lines"></span></a></div> <!-- Menu btn -->
+            </div>
             <div>
             <nav>
               <ul>
@@ -88,7 +102,7 @@
             </ul>
           </div> <!--Redes sociales-->
           <div>
-            <h1>logo</h1>
+            <h1></h1>
             <nav>
             <ul>
               <li><a href=""></a></li>
@@ -105,65 +119,83 @@
 
       <main>
 
-        <section>
+        <section id="about">
           <article>
-            <h1></h1>
-            <p></p>
-            <a href=""></a>
+            <h1><i class="ic ic_Monte"></i></h1>
+            <p>Monte es un proyecto auto-gestionado por artistas para artistas y personas vinculadas al universo creativo.</p>
+            <p>Este es <a href="">un link</a></p>
           </article>
         </section> <!--Sobre la seccion-->
 
-        <section>
-          <header>
-            <h1></h1>
-            <p></p>
-          </header>
+        <section class="content visible-desktop">
+
           <article>
-
-            <div>
-              <div>
+                <div class="imgs-slider">
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                </div> <!--Bloque 1-->
                 <div>
-                </div> <!-- 1 Imagen-->
-              </div>  <!--Bloque 1-->
-              <div>
-                <div>
-                </div> <!-- 2 Imagenes //HIDE MOBILE-->
-                <p></p> <!-- Informacion -->
-              </div> <!--Bloque 2-->
-            </div> <!--Tema-->
+                  <div class="imgs-fijas visible-desktop">
+                    <picture>
+                      <img srcset="images/desktop/acciones/acciones-fija1.jpg" alt="Sample pic"/>
+                    </picture>
+                    <picture>
+                      <img srcset="images/desktop/acciones/acciones-fija2.jpg" alt="Sample pic"/>
+                    </picture>
+                  </div> <!-- 2 Imagenes //HIDE MOBILE-->
+                  <h2>Acciones</h2>
+                  <p>parrafo</p> <!-- Informacion -->
+                  <a href="#"><span class="overlay">+</span></a>
+                </div> <!--Bloque 2-->
+          </article> <!--Acciones-->
 
-          </article>
         </section> <!--Home Content-->
 
-        <section>
+        <section class="content visible-desktop">
           <article>
 
-            <div><img src="" alt=""></div> <!--*3-->
+            <picture>
+              <source srcset="images/desktop/acciones/acciones-.jpg" media="(min-width: 752px)"/>
+              <img srcset="images/desktop/acciones/acciones-fija1.jpg" alt="Sample pic"/>
+            </picture>
+            <picture>
+              <source srcset="images/desk/proyecto-01.png" media="(min-width: 752px)"/>
+              <img srcset="images/desktop/acciones/acciones-fija1.jpg" alt="Sample pic"/>
+            </picture>
+            <picture>
+              <source srcset="images/desk/proyecto-01.png" media="(min-width: 752px)"/>
+              <img srcset="images/desktop/acciones/acciones-fija1.jpg" alt="Sample pic"/>
+            </picture>
 
           </article>
         </section> <!--Content Acciones-->
 
-        <section>
+        <section class="visible-desktop">
           <article>
 
-            <div><img src="" alt=""></div>
+            <picture>
+              <source srcset="images/desktop/acciones/acciones-.jpg" media="(min-width: 752px)"/>
+              <img srcset="images/desktop/acciones/acciones-fija1.jpg" alt="Sample pic"/>
+            </picture>
 
           </article>
         </section> <!--Content Talleres-->
 
-        <section>
+        <section class="content">
           <article>
-            <p></p>
+            <p><span class="block">estos son algunos</span>
+              de nuestros residentes:</p>
 
-            <div>
-              <p></p>
-              <a href="#"></a>
+            <div class="residencia">
+              <p>elk film</p>
+              <a href="#">www.elkfilm.dk</a>
             </div> <!--Residencia 1-->
 
-            <div>
-              <p></p>
-              <a href="#"></a>
-            </div> <!--Residencia 2-->
+            <div class="residencia">
+              <p>elk film</p>
+              <a href="#">www.elkfilm.dk</a>
+            </div> <!--Residencia 1-->
 
           </article>
         </section> <!--Content Residencias-->
@@ -171,15 +203,24 @@
       </main>
 
       <footer>
-        <h1></h1>
+        <div class="logo">
+          <h1>Monte</h1>
+          <i class="ic ic_Monte"></i>
+        </div>
         <nav>
           <ul>
-            <li><a href=""></a></li>
+            <li><a href="">WWW.residenciamonte.org</a></li>
+            <li><a href="">mail@residenciamonte.org</a></li>
+            <li><a href="">calle defensa, casco histórico</a></li>
+            <li><a href="">Buenos Aires</a></li>
+            <li><a href="">© Monte - 2017</a></li>
           </ul>
         </nav> <!--Botonera footer-->
-        <div>
+        <div class="redes-sociales">
           <ul>
-            <li><a href=""></a></li>
+            <li><a href=""><i class="ic ic_Facebook"></i></a></li>
+            <li><a href=""><i class="ic ic_Instagram"></i></a></li>
+            <li><a href=""><i class="ic ic_Calendar"></i></a></li>
           </ul>
         </div> <!--Redes sociales-->
       </footer>
@@ -197,6 +238,7 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
