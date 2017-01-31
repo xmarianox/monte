@@ -1,19 +1,14 @@
 'use strict';
 
-function initSlider() {
-    $('.imgs-slider').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        autoplay: true,
-        prevArrow: '<div class="slick-prev"><i class="fa fa-chevron-left"></i></div>',
-        nextArrow: '<div class="slick-next"><i class="fa fa-chevron-right"></i></div>'
+$(document).ready(function () {
+    $('.slider').slick({
+        arrows: false
     });
-}
-
-$(document).on('ready', function () {
-    initSlider();
-    console.log('algo');
+    $('.left-btn').click(function () {
+        $('.slider').slick('slickPrev');
+    });
+    $('.right-btn').click(function () {
+        $('.slider').slick('slickNext');
+    });
 });
 //# sourceMappingURL=main.js.map

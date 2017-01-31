@@ -190,3 +190,16 @@
     width: $button-size-mobile;
   }
 }
+
+//@mixin plus {
+//  display: inline-block;
+//  width: $button-size;
+//  height: 3px;
+//  vertical-align: middle;
+//  background: $red;
+//  transition: $button-transition;
+//
+//  @media #{$breakpoint-smartphone-big} {
+//    width: $button-size-mobile;
+//  }
+//}
