@@ -228,6 +228,17 @@ header {
       transform: rotate(45deg);
     }
   }
+  //Home Content
+  &-home {
+    .bloque-1,.bloque-2 {
+
+    }
+    @media #{$breakpoint-tablet-port}{
+      .bloque-1,.bloque-2 {
+
+      }
+    }
+  }
 }
 //Slider
 .slider-content {
