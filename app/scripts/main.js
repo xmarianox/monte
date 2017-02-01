@@ -9,13 +9,16 @@ $(document).ready(function(){
         $('.slider').slick('slickNext');
     });
 
-    $('.overlay-btn').click(function(){
-        if($('.overlay-pantalla').css('opacity') === '0'){
-            $('.overlay-pantalla').css('opacity','0.7');
-            $('.overlay-btn').removeClass('gira');
+    $('.overlay-btn').click(function(e){
+        e.preventDefault();
+        var parent = $(this).parent().prev();
+        var pantalla = $(parent).children('.overlay-pantalla');
+        if($(pantalla).css('opacity') === '0'){
+            $(pantalla).css('opacity','0.7');
+            $(this).addClass('gira');
         }else{
-            $('.overlay-pantalla').css('opacity','0');
-            $('.overlay-btn').addClass('gira');
+            $(pantalla).css('opacity','0');
+            $(this).removeClass('gira');
         }
             // $('.developers-container .item-partner').toggleClass('animated');
             // if($('.developers-container .item-partner').hasClass('animated')){

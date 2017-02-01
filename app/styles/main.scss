@@ -166,17 +166,17 @@ header {
     display: block;
     margin: 0 auto;
     cursor: pointer;
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-    -ms-transform: rotate(45deg); /* IE 9 */
-    transform: rotate(45deg);
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    -ms-transform: rotate(90deg); /* IE 9 */
+    transform: rotate(90deg);
     text-align: center;
     @include font-size(30px);
     @include line-height(58px);
     color: $red;
     &.gira {
-      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-      -ms-transform: rotate(90deg); /* IE 9 */
-      transform: rotate(90deg);
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+      -ms-transform: rotate(45deg); /* IE 9 */
+      transform: rotate(45deg);
     }
   }
 }
@@ -191,7 +191,7 @@ header {
     z-index: 2;//Overlay: 2
     background-color: black;
     @include size(100%, 100%);
-    @include opacity(0.7);
+    @include opacity(0);
     @include transition(0.5s);
     p {
       color: white;
