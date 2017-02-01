@@ -22,12 +22,20 @@ $(document).ready(function () {
             $(pantalla).css('opacity', '0');
             $(this).removeClass('gira');
         }
-        // $('.developers-container .item-partner').toggleClass('animated');
-        // if($('.developers-container .item-partner').hasClass('animated')){
-        //     $('#plusBtn').addClass('gira');
-        // }else{
-        //     $('#plusBtn').removeClass('gira');
-        // }
+    });
+
+    $('.btn-hamburger').click(function () {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('.pantalla-mobile').addClass('slideInDown');
+            $('.pantalla-mobile').removeClass('slideInUp');
+            $('.pantalla-mobile').css('display', 'none');
+        } else {
+            $(this).addClass('active');
+            $('.pantalla-mobile').css('display', 'flex');
+            $('.pantalla-mobile').removeClass('slideInDown');
+            $('.pantalla-mobile').addClass('slideInUp');
+        }
     });
 });
 //# sourceMappingURL=main.js.map

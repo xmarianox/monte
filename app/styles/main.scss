@@ -34,6 +34,32 @@ body {
 
 header {
   .botonera-mobile {
+    .pantalla-mobile {
+      position: absolute;
+      display: none;
+      //align-items: center;
+      z-index: 2;
+      background-color: black;
+      top: 90px;
+      //min-height: calc(100vh - 90px);
+      @include size(100%, auto);
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: solid 1px white;
+          @include size(100vw, 50px);
+          a {
+            text-transform: uppercase;
+            color: white;
+          }
+          &:last-child{
+            margin-bottom: 50px;
+          }
+        }
+      }
+    }
     .cabecera {
       display: flex;
       align-items: center;
