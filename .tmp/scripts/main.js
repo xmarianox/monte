@@ -27,10 +27,12 @@ $(document).ready(function () {
     $('.btn-hamburger').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
-            $('.pantalla-mobile').css('display', 'none');
+            $(".pantalla-mobile").css('opacity', '0');
+            $(".pantalla-mobile").css('height', '0');
         } else {
             $(this).addClass('active');
-            $('.pantalla-mobile').css('display', 'flex');
+            $(".pantalla-mobile").css('opacity', '1');
+            $(".pantalla-mobile").css('height', 'auto');
         }
     });
 });

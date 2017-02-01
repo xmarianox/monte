@@ -47,14 +47,15 @@ header {
   .botonera-mobile {
     .pantalla-mobile {
       position: absolute;
-      display: none;
+      //display: none;
       //align-items: center;
       z-index: 2;
       background-color: black;
       top: 90px;
       //min-height: calc(100vh - 90px);
       @include size(100%, auto);
-      @include transition(1s);
+      @include transition(0.3s);
+      @include opacity(0);
       ul {
         li {
           display: flex;
