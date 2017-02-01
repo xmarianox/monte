@@ -28,9 +28,20 @@ body {
   overflow-x: hidden;
 }
 
+//General classes
+
+.invisible {
+	display: none;
+}
+
 .visible-desktop {
   display: none;
+	@media #{$breakpoint-tablet-port} {
+		display: flex;
+	}
 }
+
+//Header
 
 header {
   .botonera-mobile {
@@ -43,6 +54,7 @@ header {
       top: 90px;
       //min-height: calc(100vh - 90px);
       @include size(100%, auto);
+      @include transition(1s);
       ul {
         li {
           display: flex;
@@ -59,6 +71,17 @@ header {
           }
         }
       }
+	    &-lenguages {
+		    a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+			    @include size(50%, 100%);
+          &:first-child {
+            border-right: solid 2px white;
+          }
+		    }
+	    }
     }
     .cabecera {
       display: flex;
@@ -173,6 +196,8 @@ header {
   }
 }
 
+//General content
+
 .content {
   text-align: center;
   padding: 50px 0;
@@ -184,9 +209,6 @@ header {
   .overlay-btn {
     @include size(58px, 58px);
     @include border-radius(50%);
-    //position: absolute;
-    //left: 0;
-    //right: 0;
     bottom: -22px;
     z-index: 10;
     display: block;
@@ -256,10 +278,10 @@ header {
   }
 }
 
+//Footer
+
 footer {
   display: block;
-  //position: absolute;
-  //bottom: 0;
   font-family: $futura;
   text-align: center;
   text-transform: uppercase;
