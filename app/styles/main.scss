@@ -201,6 +201,9 @@ header {
 
 .content {
     padding: 50px 0;
+  .rtl {
+    flex-direction: row-reverse;
+  }
   &-home {
     display: flex;
     flex-direction: row;
@@ -293,37 +296,92 @@ header {
       }
     }
     @media #{$breakpoint-tablet-port}{
-      height: 400px;
+      height: 350px;
       .bloque-1{
         flex-basis: 50%;
-        height: 400px;
+        height: 350px;
         .slider-content {
-          height: 400px;
+          height: 350px;
           .slider {
-            height: 400px;
+            height: 350px;
             img {
-              width: auto;
-              height: 400px;
+              width: 100%;
+              min-height: 350px;
+              object-fit: cover;
             }
           }
         }
       }
       .bloque-2{
         flex-basis: 50%;
-        height: 400px;
+        justify-content: flex-start;
+        height: 350px;
         .imgs-fijas {
           img {
+            display: block;
             width: 100%;
-            height: calc(400px / 2);
+            height: 200px;
             object-fit: cover;
           }
         }
         .info-home {
-          height: 200px;
+          height: 150px;
           text-align: left;
         }
       }
     }
+    //@media #{$breakpoint-tablet-land}{
+    //  height: 550px;
+    //  .bloque-1{
+    //    height: 550px;
+    //    .slider-content {
+    //      height: 550px;
+    //      .slider {
+    //        height: 550px;
+    //        img {
+    //          height: 550px;
+    //        }
+    //      }
+    //    }
+    //  }
+    //  .bloque-2{
+    //    height: 550px;
+    //    .imgs-fijas {
+    //      img {
+    //        height: calc(550px / 2);
+    //      }
+    //    }
+    //    .info-home {
+    //      height: calc(550px / 2);
+    //    }
+    //  }
+    //}
+    //@media #{$breakpoint-laptop-small}{
+    //  height: 550px;
+    //  .bloque-1{
+    //    height: 550px;
+    //    .slider-content {
+    //      height: 550px;
+    //      .slider {
+    //        height: 550px;
+    //        img {
+    //          height: 550px;
+    //        }
+    //      }
+    //    }
+    //  }
+    //  .bloque-2{
+    //    height: 550px;
+    //    .imgs-fijas {
+    //      img {
+    //        height: calc(550px / 2);
+    //      }
+    //    }
+    //    .info-home {
+    //      height: calc(550px / 2);
+    //    }
+    //  }
+    //}
   }
 }
 
