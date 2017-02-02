@@ -41,4 +41,18 @@ $(document).ready(function(){
             $( ".pantalla-mobile" ).css('height','auto');
         }
     });
+    mobileVsDesk();
+    function mobileVsDesk(){
+        var imgsSlider = $('.img-slider');
+        var windowWidth = parseInt($(window).width());
+        if(windowWidth >= 752) {
+            for(var i = 0; i < imgsSlider.length; i ++) {
+                var src = $(imgsSlider[i]).attr('src');
+                var mod = src.split('/');
+                src = mod[0] + '/' + 'desktop/' + mod[2] + '/' + mod[3];
+                $(imgsSlider[i]).attr('src',src);
+                console.log($(imgsSlider[i]));
+            }
+        }
+    }
 });

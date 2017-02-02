@@ -29,6 +29,11 @@ body {
 }
 
 //General classes
+.only-mobile {
+  @media #{$breakpoint-tablet-port} {
+    display: none;
+  }
+}
 
 .invisible {
 	display: none;
