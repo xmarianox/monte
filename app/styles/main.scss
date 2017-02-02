@@ -336,6 +336,10 @@ header {
           text-align: left;
           padding-top: 20px;
         }
+        .overlay-btn {
+          display: inline-block;
+          width: auto;
+        }
       }
     }
     @media #{$breakpoint-tablet-land}{
@@ -357,6 +361,7 @@ header {
         .imgs-fijas {
           img {
             min-height: 350px;
+            border: 1px solid gray;
           }
         }
         .info-home {
