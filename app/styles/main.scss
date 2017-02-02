@@ -200,7 +200,6 @@ header {
 //General content
 
 .content {
-    text-align: center;
     padding: 50px 0;
   &-home {
     display: flex;
@@ -220,7 +219,8 @@ header {
         .slider {
           height: 200px;
           img {
-            width: 100%
+            width: 100%;
+            object-fit: cover;
           }
         }
         .left-btn, .right-btn {
@@ -244,10 +244,13 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 30px;
       height: 300px;
+      .info-home {
+        padding: 0 30px;
+        text-align: center;
+      }
         h2 {
-          padding: 20px;
+          padding: 20px 0;
           color: $red;
           text-transform: uppercase;
         }
@@ -272,6 +275,54 @@ header {
             transform: rotate(45deg);
           }
         }
+    }
+    //Content-home breakpoints
+    @media #{$breakpoint-smartphone-big}{
+      height: 600px;
+      .bloque-1{
+        height: 300px;
+        .slider-content {
+          height: 300px;
+          .slider {
+            height: 300px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    @media #{$breakpoint-tablet-port}{
+      height: 400px;
+      .bloque-1{
+        flex-basis: 50%;
+        height: 400px;
+        .slider-content {
+          height: 400px;
+          .slider {
+            height: 400px;
+            img {
+              width: auto;
+              height: 400px;
+            }
+          }
+        }
+      }
+      .bloque-2{
+        flex-basis: 50%;
+        height: 400px;
+        .imgs-fijas {
+          img {
+            width: 100%;
+            height: calc(400px / 2);
+            object-fit: cover;
+          }
+        }
+        .info-home {
+          height: 200px;
+          text-align: left;
+        }
+      }
     }
   }
 }
