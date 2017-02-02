@@ -230,12 +230,27 @@ header {
   }
   //Home Content
   &-home {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .bloque-2 {
+      .imgs-fijas {
+        width: 100%;
+        picture {
+          width: 100%;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
     .bloque-1,.bloque-2 {
-
+      width: 100%;
     }
     @media #{$breakpoint-tablet-port}{
       .bloque-1,.bloque-2 {
-
+        width: 50%;
       }
     }
   }
@@ -248,7 +263,7 @@ header {
     align-items: center;
     justify-content: center;
     position: absolute;
-    z-index: 2;//Overlay: 2
+    z-index: 0;//Overlay: 2
     background-color: black;
     @include size(100%, 100%);
     @include opacity(0);
@@ -259,10 +274,10 @@ header {
     }
   }
   .slider {
-    width: 100%;
     height: 100%;
     img {
       width: 100%;
+      height: 100%;
     }
   }
   .left-btn, .right-btn {
