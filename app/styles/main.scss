@@ -179,8 +179,8 @@ header {
         }
       }
     }
-    }
   }
+}
 
 .block {
   display: block;
@@ -334,6 +334,7 @@ header {
             width: 100%;
             min-height: 300px;
             object-fit: cover;
+            border: 2px solid whitesmoke;
           }
         }
         .info-home {
@@ -366,7 +367,6 @@ header {
         .imgs-fijas {
           img {
             min-height: 350px;
-            border: 1px solid gray;
           }
         }
         .info-home {
