@@ -3,7 +3,9 @@
 $(document).ready(function () {
     $('.slider').slick({
         arrows: false,
-        mobileFirst: true
+        mobileFirst: true,
+        adaptiveHeight: true,
+        respondTo: 'min'
     });
     $('.left-btn').click(function () {
         var parent = $(this).parent();
