@@ -3,21 +3,26 @@ $(document).ready(function(){
         arrows: false
     });
     $('.left-btn').click(function(){
-        $('.slider').slick('slickPrev');
+        var parent = $(this).parent();
+        var slider = parent.children('.slider');
+        slider.slick('slickPrev');
     });
     $('.right-btn').click(function(){
-        $('.slider').slick('slickNext');
+        var parent = $(this).parent();
+        var slider = parent.children('.slider');
+        slider.slick('slickNext');
     });
-
     $('.overlay-btn').click(function(e){
         e.preventDefault();
-        var parent = $(this).parent().prev();
+        var parent = $(this).parent().prev().children('.slider-content');
         var pantalla = $(parent).children('.overlay-pantalla');
-        if($(pantalla).css('opacity') === '0'){
-            $(pantalla).css('opacity','0.7');
+        if(pantalla.css('opacity') === '0'){
+            pantalla.css('opacity','0.7');
+            pantalla.css('z-index','2');
             $(this).addClass('gira');
         }else{
             $(pantalla).css('opacity','0');
+            pantalla.css('z-index','0');
             $(this).removeClass('gira');
         }
     });
