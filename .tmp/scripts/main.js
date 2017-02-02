@@ -2,7 +2,8 @@
 
 $(document).ready(function () {
     $('.slider').slick({
-        arrows: false
+        arrows: false,
+        mobileFirst: true
     });
     $('.left-btn').click(function () {
         var parent = $(this).parent();
