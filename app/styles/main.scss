@@ -47,22 +47,33 @@ body {
 		display: flex;
 	}
 }
+.sticky-mobile {
+  background-color: black;
+  color: black;
+}
 
 //Header
 
 header {
+  background: url('../images/mobile/Monte-home_intro.jpg') no-repeat;
+  background-size: cover;
+  min-height: 400px;
   .botonera-mobile {
     .pantalla-mobile {
-      position: absolute;
+      position: fixed;
       //display: none;
       //align-items: center;
       z-index: 2;
       background-color: black;
-      top: 90px;
+      top: 0;
       //min-height: calc(100vh - 90px);
       @include size(100%, auto);
       @include transition(0.3s);
       @include opacity(0);
+      div:first-child {
+        height: 90px;
+        background-color: black;
+      }
       ul {
         li {
           display: flex;
@@ -93,13 +104,16 @@ header {
     }
     .cabecera {
       display: flex;
+      z-index: 3;
+      position: fixed;
       align-items: center;
       justify-content: space-between;
-      background-color: black;
+      align-content: center;
       color: white;
       font-family: $futuraLight;
       text-transform: uppercase;
-      @include size(100%,90px);
+      @include size(100%,70px);
+      @include transition(0.4s);
       h1 {
         padding-left: 20px;
         @include font-size(40px);
@@ -111,7 +125,7 @@ header {
       }
       .btn-hamburger {
         position: absolute;
-        top: 35px;
+        top: 30px;
         right: 20px;
         z-index: 2; //Botón menú
         background: transparent;
@@ -181,6 +195,10 @@ header {
         }
       }
     }
+  }
+  .botonera-desktop {
+    position: fixed;
+    @include size(100%, 90px);
   }
 }
 
@@ -303,7 +321,7 @@ header {
     //Content-home breakpoints
     @media #{$breakpoint-smartphone-big}{
       height: 600px;
-      .bloque-1{
+      .bloque-1 {
         height: 300px;
         .slider-content {
           height: 300px;
@@ -321,7 +339,7 @@ header {
     }
     @media #{$breakpoint-tablet-port}{
       height: 450px;
-      .bloque-1{
+      .bloque-1 {
         flex-basis: 50%;
         height: 450px;
         .slider-content {
@@ -340,7 +358,7 @@ header {
           }
         }
       }
-      .bloque-2{
+      .bloque-2 {
         flex-basis: 50%;
         justify-content: flex-start;
         height: 450px;
@@ -366,7 +384,7 @@ header {
     }
     @media #{$breakpoint-tablet-land}{
       min-height: 600px;
-      .bloque-1{
+      .bloque-1 {
         min-height: 600px;
         .slider-content {
           min-height: 600px;
@@ -381,7 +399,7 @@ header {
           }
         }
       }
-      .bloque-2{
+      .bloque-2 {
         min-height: 600px;
         .imgs-fijas {
           img {
@@ -395,8 +413,7 @@ header {
     }
     @media #{$breakpoint-laptop-small}{
       min-height: 800px;
-      .bloque-1{
-        background-color: red;
+      .bloque-1 {
         min-height: 800px;
         .slider-content {
           min-height: 800px;
@@ -411,7 +428,7 @@ header {
           }
         }
       }
-      .bloque-2{
+      .bloque-2 {
         min-height: 800px;
         .imgs-fijas {
           img {
@@ -425,8 +442,7 @@ header {
     }
     @media #{$breakpoint-laptop-big}{
       min-height: 850px;
-      .bloque-1{
-        background-color: red;
+      .bloque-1 {
         min-height: 850px;
         .slider-content {
           min-height: 850px;
@@ -441,7 +457,7 @@ header {
           }
         }
       }
-      .bloque-2{
+      .bloque-2 {
         min-height: 850px;
         .imgs-fijas {
           img {
@@ -453,33 +469,6 @@ header {
         }
       }
     }
-    //@media #{$breakpoint-desktop-medium}{
-    //  min-height: 1000px;
-    //  .bloque-1{
-    //    background-color: red;
-    //    min-height: 1000px;
-    //    .slider-content {
-    //      min-height: 1000px;
-    //      .slider {
-    //        min-height: 1000px;
-    //        img {
-    //          min-height: 1000px;
-    //        }
-    //      }
-    //    }
-    //  }
-    //  .bloque-2{
-    //    min-height: 1000px;
-    //    .imgs-fijas {
-    //      img {
-    //        min-height: 750px;
-    //      }
-    //    }
-    //    .info-home {
-    //      min-height: 250px;
-    //    }
-    //  }
-    //}
   }
   &-acciones {
     picture {

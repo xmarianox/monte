@@ -1,6 +1,22 @@
 'use strict';
 
+function mobileVsDesk() {
+    var imgsSlider = $('.img-slider');
+    var windowWidth = parseInt($(window).width());
+    if (windowWidth >= 752) {
+        for (var i = 0; i < imgsSlider.length; i++) {
+            var src = $(imgsSlider[i]).attr('src');
+            var mod = src.split('/');
+            src = mod[0] + '/' + 'desktop/' + mod[2] + '/' + mod[3];
+            $(imgsSlider[i]).attr('src', src);
+            console.log($(imgsSlider[i]));
+        }
+    }
+}
+
 $(document).ready(function () {
+
+    //Slider Config
     $('.slider').slick({
         arrows: false,
         mobileFirst: true,
@@ -17,12 +33,12 @@ $(document).ready(function () {
         var slider = parent.children('.slider');
         slider.slick('slickNext');
     });
+
+    //Overlay
     $('.overlay-btn').click(function (e) {
         e.preventDefault();
         var parent = $(this).parent().parent().prev().children('.slider-content');
-        console.log(parent);
         var pantalla = $(parent).children('.overlay-pantalla');
-        console.log(pantalla);
         if (pantalla.css('opacity') === '0') {
             pantalla.css('opacity', '0.7');
             pantalla.css('z-index', '2');
@@ -34,6 +50,7 @@ $(document).ready(function () {
         }
     });
 
+    //Nav Mobie
     $('.btn-hamburger').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
@@ -45,19 +62,18 @@ $(document).ready(function () {
             $('.pantalla-mobile').css('height', 'auto');
         }
     });
-    mobileVsDesk();
-    function mobileVsDesk() {
-        var imgsSlider = $('.img-slider');
-        var windowWidth = parseInt($(window).width());
-        if (windowWidth >= 752) {
-            for (var i = 0; i < imgsSlider.length; i++) {
-                var src = $(imgsSlider[i]).attr('src');
-                var mod = src.split('/');
-                src = mod[0] + '/' + 'desktop/' + mod[2] + '/' + mod[3];
-                $(imgsSlider[i]).attr('src', src);
-                console.log($(imgsSlider[i]));
-            }
+
+    //Sticky nav
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1) {
+            $('.cabecera').addClass("sticky-mobile");
+        } else {
+            $('.cabecera').removeClass("sticky-mobile");
         }
-    }
+    });
+
+    //Imgs mobile y desk
+    mobileVsDesk();
 });
 //# sourceMappingURL=main.js.map
