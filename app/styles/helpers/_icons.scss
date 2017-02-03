@@ -6,7 +6,7 @@
   &_Monte {
     background: url(../../images/icons/Monte-icono.svg) center center no-repeat;
     text-align: center;
-    @include size(350px, 36px);
+    @include size(35px, 36px);
 
     //@media #{$breakpoint-smartphone-big-landscape} {
     //  @include size(28px, 28px);
