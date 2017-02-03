@@ -61,13 +61,13 @@ header {
   .botonera-mobile {
     .pantalla-mobile {
       position: fixed;
-      //display: none;
       //align-items: center;
-      z-index: 2;
       background-color: black;
       top: 0;
+      visibility: hidden;
+      z-index: 3;
       //min-height: calc(100vh - 90px);
-      @include size(100%, auto);
+      @include size(100%, 0);
       @include transition(0.3s);
       @include opacity(0);
       div:first-child {
@@ -257,6 +257,9 @@ header {
           @include size(100%,200px);
           @include opacity(0);
           @include transition(1s);
+          p {
+            color: white;
+          }
         }
         .slider {
           height: 200px;

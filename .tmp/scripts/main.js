@@ -56,10 +56,12 @@ $(document).ready(function () {
             $(this).removeClass('active');
             $('.pantalla-mobile').css('opacity', '0');
             $('.pantalla-mobile').css('height', '0');
+            $('.pantalla-mobile').css('visibility', 'hidden');
         } else {
             $(this).addClass('active');
             $('.pantalla-mobile').css('opacity', '1');
             $('.pantalla-mobile').css('height', 'auto');
+            $('.pantalla-mobile').css('visibility', 'visible');
         }
     });
 
