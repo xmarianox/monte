@@ -230,11 +230,16 @@ header {
       flex-basis: 100%;
       height: 200px;
       overflow: hidden;
-      .overlay-pantalla {
-        display: none;
-      }
       .slider-content {
         height: 200px;
+        .overlay-pantalla {
+          position: absolute;
+          z-index: 0;
+          background-color: black;
+          @include size(100%,200px);
+          @include opacity(0);
+          @include transition(1s);
+        }
         .slider {
           height: 200px;
           img {
@@ -302,6 +307,9 @@ header {
         height: 300px;
         .slider-content {
           height: 300px;
+          .overlay-pantalla {
+            @include size(100%,300px);
+          }
           .slider {
             height: 300px;
             img {
@@ -318,6 +326,9 @@ header {
         height: 450px;
         .slider-content {
           min-height: 450px;
+          .overlay-pantalla {
+            @include size(100%,450px);
+          }
           .slider {
             min-height: 450px;
             img {
@@ -356,10 +367,12 @@ header {
     @media #{$breakpoint-tablet-land}{
       min-height: 600px;
       .bloque-1{
-        background-color: red;
         min-height: 600px;
         .slider-content {
           min-height: 600px;
+          .overlay-pantalla {
+            @include size(100%,600px);
+          }
           .slider {
             min-height: 600px;
             img {
@@ -387,6 +400,9 @@ header {
         min-height: 800px;
         .slider-content {
           min-height: 800px;
+          .overlay-pantalla {
+            @include size(100%,800px);
+          }
           .slider {
             min-height: 800px;
             img {
@@ -414,6 +430,9 @@ header {
         min-height: 850px;
         .slider-content {
           min-height: 850px;
+          .overlay-pantalla {
+            @include size(100%,850px);
+          }
           .slider {
             min-height: 850px;
             img {

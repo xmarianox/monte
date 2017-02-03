@@ -17,8 +17,10 @@ $(document).ready(function(){
     });
     $('.overlay-btn').click(function(e){
         e.preventDefault();
-        var parent = $(this).parent().prev().children('.slider-content');
+        var parent = $(this).parent().parent().prev().children('.slider-content');
+        console.log(parent);
         var pantalla = $(parent).children('.overlay-pantalla');
+        console.log(pantalla);
         if(pantalla.css('opacity') === '0'){
             pantalla.css('opacity','0.7');
             pantalla.css('z-index','2');
