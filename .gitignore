@@ -41,3 +41,4 @@ bower_components
 test/
 .DS_Store
 .idea/*
+.tmp/
