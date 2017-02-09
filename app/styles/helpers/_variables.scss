@@ -8,11 +8,18 @@ $button-size: 2.5rem;
 $button-size-mobile: 2.1rem;
 $button-transition: .3s;
 
-//fonts
-$futura: 'FuturaCondMedium';
-$futuraBold: 'FuturaBT-BoldCondensed';
-$futuraLight: 'Futura-Book';
-$futuraBook: 'FuturaBT-LightCondensed';
+// =============================================================================
+// -- FONTS
+// =============================================================================
+
+$FuturaBT-Book: 'FuturaBT-Book';
+$FuturaBook: 'FuturaBook';
+$FuturaBT-Medium: 'FuturaBT-Medium';
+$FuturaMediumbt: 'FuturaMediumbt';
+$FuturaBT-BoldCondensed: 'FuturaBT-BoldCondensed';
+$FuturaBold: 'FuturaBold';
+$FuturaBT-LightCondensed: 'FuturaBT-LightCondensed';
+$FuturaLight: 'FuturaLight';
 
 // =============================================================================
 // -- COLORES
@@ -20,6 +27,8 @@ $futuraBook: 'FuturaBT-LightCondensed';
 
 $gray: #c6c6c6;
 $red: #c04545;
+$black: #000000;
+$white: #ffffff;
 
 // =============================================================================
 // -- BREAKPOINTS

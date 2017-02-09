@@ -12,20 +12,16 @@
 
 @import "helpers/variables";
 @import "helpers/mixins";
-@import "helpers/generycs";
 @import "helpers/icons";
 @import "helpers/buttons";
 @import "helpers/fonts";
 @import "layout/grids";
+@import "helpers/generycs";
 
 *, *:after, *:before {
   margin: 0;
   padding: 0;
   @include border-box;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 //General classes
@@ -47,9 +43,8 @@ body {
 		display: flex;
 	}
 }
-.sticky-mobile {
-  background-color: black;
-  color: black;
+.sticky {
+  background-color: $black;
 }
 
 //Header
@@ -62,7 +57,7 @@ header {
     .pantalla-mobile {
       position: fixed;
       //align-items: center;
-      background-color: black;
+      background-color: $black;
       top: 0;
       visibility: hidden;
       z-index: 3;
@@ -72,18 +67,18 @@ header {
       @include opacity(0);
       div:first-child {
         height: 90px;
-        background-color: black;
+        background-color: $black;
       }
       ul {
         li {
           display: flex;
           align-items: center;
           justify-content: center;
-          border-bottom: solid 1px white;
+          border-bottom: solid 1px $white;
           @include size(100vw, 50px);
           a {
             text-transform: uppercase;
-            color: white;
+            color: $white;
           }
           &:last-child{
             margin-bottom: 50px;
@@ -97,7 +92,7 @@ header {
           justify-content: center;
 			    @include size(50%, 100%);
           &:first-child {
-            border-right: solid 2px white;
+            border-right: solid 2px $white;
           }
 		    }
 	    }
@@ -109,8 +104,7 @@ header {
       align-items: center;
       justify-content: space-between;
       align-content: center;
-      color: white;
-      font-family: $futuraLight;
+      color: $white;
       text-transform: uppercase;
       @include size(100%,70px);
       @include transition(0.4s);
@@ -132,11 +126,11 @@ header {
         border: none;
         padding: 0;
         margin: 0;
-        transition: .3s;
         cursor: pointer;
         user-select: none;
         @include size(40px, 30px);
         @include border-radius(0);
+	      @include transition(0.3s);
 
         &:hover {
           @include opacity(1);
@@ -157,7 +151,7 @@ header {
               transform-origin: 50% 50%;
               top: 0;
               width: $button-size;
-              background: white;
+              background: $white;
             }
 
             &:before {
@@ -196,16 +190,73 @@ header {
       }
     }
   }
-  .botonera-desktop {
-    position: fixed;
-    @include size(100%, 90px);
+@media #{$breakpoint-tablet-port} {
+           .botonera-desktop {
+             display: flex;
+             flex-direction: row;
+             align-items: center;
+             justify-content: space-between;
+             position: fixed;
+             z-index: 3;
+             color: $white;
+             @include size(100%, 90px);
+             @include transition(0.3s);
+           }
+          .items-botonera-desk {
+            padding: 0 30px;
+          }
+          .botonera-desktop:nth-child(2){
+            text-align: center;
+            h1 {
+              @include font-size(40px);
+            }
+            hr {
+              margin: 5px 0;
+            }
+            nav{
+              ul{
+                li{
+                  display: inline-block;
+                }
+              }
+            }
+          }
+   }
+  //Breakpoints header
+  @media #{$breakpoint-smartphone-medium-landscape} {
+    background-size: cover;
+    min-height: 500px;
+  }
+  @media #{$breakpoint-smartphone-big} {
+    background-size: cover;
+    min-height: 550px;
+  }
+  @media #{$breakpoint-smartphone-big-landscape} {
+    min-height: 700px;
+  }
+  @media #{$breakpoint-tablet-port} {
+    background: url('../images/desktop/Monte-home_intro.jpg') no-repeat;
+    background-size: cover;
+    min-height: 550px;
+  }
+  @media #{$breakpoint-tablet-land} {
+    min-height: 600px;
+  }
+  @media #{$breakpoint-laptop-small} {
+    min-height: calc(100vh - 200px);
+  }
+  @media #{$breakpoint-desktop-big} {
+    min-height: 100vh;
   }
 }
 
 #about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: solid 1px $gray;
   text-align: center;
-  padding: 52px 0;
+  min-height: 200px;
   p {
     margin: 0 auto;
     @include size(80%, auto);
@@ -251,14 +302,17 @@ header {
       .slider-content {
         height: 200px;
         .overlay-pantalla {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           position: absolute;
           z-index: 0;
-          background-color: black;
+          background-color: $black;
           @include size(100%,200px);
           @include opacity(0);
-          @include transition(1s);
+          @include transition(0.5s);
           p {
-            color: white;
+            color: $white;
           }
         }
         .slider {
@@ -274,7 +328,7 @@ header {
           min-height: 40px;
           height: 40px;
           top: calc((100% - 40px) / 2);
-          color: white;
+          color: $white;
         }
         .left-btn {
           left: 5%;
@@ -503,7 +557,6 @@ header {
 
 footer {
   display: block;
-  font-family: $futura;
   text-align: center;
   text-transform: uppercase;
   @include size(100%, auto);

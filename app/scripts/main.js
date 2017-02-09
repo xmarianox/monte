@@ -64,17 +64,26 @@ $(document).ready(function(){
     });
 
     //Sticky nav
-
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 1){
-            $('.cabecera').addClass("sticky-mobile");
+    function navs(){
+        var nav = '';
+        var windowWidth = parseInt($(window).width());
+        if(windowWidth >= 752) {
+            nav = $('.botonera-desktop');
+        }else{
+            nav = $('.cabecera');
         }
-        else{
-            $('.cabecera').removeClass("sticky-mobile");
-        }
-    });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){
+                nav.addClass("sticky");
+            }
+            else{
+                nav.removeClass("sticky");
+            }
+        });
+    }
 
 
     //Imgs mobile y desk
     mobileVsDesk();
+    navs();
 });
