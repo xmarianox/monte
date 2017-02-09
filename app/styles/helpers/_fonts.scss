@@ -1,11 +1,7 @@
 // =============================================================================
 // FONTS
 // =============================================================================
-@include font-face($FuturaBT-Book, '../fonts/FuturaBT-Book');
-@include font-face($FuturaBook, '../fonts/FuturaBook');
-@include font-face($FuturaBT-Medium, '../fonts/FuturaBT-Medium');
-@include font-face($FuturaMediumbt, '../fonts/FuturaMediumbt');
-@include font-face($FuturaBT-BoldCondensed,'../fonts/FuturaBT-BoldCondensed');
-@include font-face($FuturaBold, '../fonts/FuturaBold');
-@include font-face($FuturaBT-LightCondensed, '../fonts/FuturaBT-LightCondensed');
-@include font-face($FuturaLight, '../fonts/FuturaLight');
+@include font-face($FuturaBook, '../fonts/original_futura-book');
+@include font-face($Futura, '../fonts/original_futura');
+@include font-face($FuturaBold, '../fonts/original_futura-bold');
+@include font-face($FuturaLight, '../fonts/original_futura-light');
