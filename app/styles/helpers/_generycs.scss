@@ -9,12 +9,20 @@
 }
 
 body {
-  font-family: $FuturaBook;
   font-weight: 400;
   overflow-x: hidden;
 }
 
 a{
+  font-family: $FuturaMediumbt;
   color: inherit;
   text-decoration: none;
+}
+
+h1 {
+  font-family: $FuturaLight;
+}
+
+p {
+  font-family: $FuturaBook;
 }

@@ -203,7 +203,12 @@ header {
              @include transition(0.3s);
            }
           .items-botonera-desk {
-            padding: 0 30px;
+            padding-left: 20px;
+            .redes-sociales {
+              li {
+                display: inline-block;
+              }
+            }
           }
           .botonera-desktop:nth-child(2){
             text-align: center;
@@ -243,9 +248,6 @@ header {
     min-height: 600px;
   }
   @media #{$breakpoint-laptop-small} {
-    min-height: calc(100vh - 200px);
-  }
-  @media #{$breakpoint-desktop-big} {
     min-height: 100vh;
   }
 }
@@ -292,6 +294,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding: 0 15px;
     max-width: $grid-max-width;
     height: 500px;
     .bloque-1 {
@@ -586,7 +589,7 @@ footer {
   .redes-sociales {
     li {
       display: inline-block;
-      padding: 10px 10px 10px 0;
+      padding: 10px 2px 10px 0;
     }
   }
 }
