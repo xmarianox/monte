@@ -44,7 +44,18 @@
 	}
 }
 .sticky {
-  background-color: $black;
+  background-color: $black-80;
+  height: 50px !important;
+  align-items: center !important;
+  @media #{$breakpoint-tablet-port} {
+    .items-botonera-desk {
+      padding-top: 0;
+      h1,hr {
+        display: none;
+        @include opacity(0);
+      }
+    }
+  }
 }
 
 //Header
@@ -194,7 +205,7 @@ header {
            .botonera-desktop {
              display: flex;
              flex-direction: row;
-             align-items: center;
+             align-items: flex-start;
              justify-content: space-between;
              position: fixed;
              z-index: 3;
@@ -203,7 +214,7 @@ header {
              @include transition(0.3s);
            }
           .items-botonera-desk {
-            padding-left: 20px;
+            padding: 30px 0 0 20px;
             .redes-sociales {
               li {
                 display: inline-block;
@@ -213,15 +224,26 @@ header {
           .botonera-desktop:nth-child(2){
             text-align: center;
             h1 {
-              @include font-size(40px);
+              @include font-size(35px);
             }
             hr {
-              margin: 5px 0;
+              margin: 12px 0 15px;
+              border: none;
+              height: 1px;
+              background-color: $brown;
             }
             nav{
               ul{
                 li{
                   display: inline-block;
+                  &:first-child + li {
+                    padding: 0 30px;
+                  }
+                  a{
+                    font-family: $Futura;
+                    text-transform: uppercase;
+                    @include font-size(14px);
+                  }
                 }
               }
             }
@@ -581,6 +603,7 @@ footer {
         border-bottom: solid 1px $gray;
         @include size(100%,48px);
         a{
+          color: $darkGray;
           @include font-size(14px);
         }
       }
