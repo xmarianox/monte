@@ -94,7 +94,7 @@ header {
           justify-content: center;
           border-bottom: solid 1px #666666;
           margin: 0 auto;
-          @include size(90vw, 70px);
+          @include size(95vw, 70px);
           &:first-child {
             border-top: solid 1px #666666;;
           }
@@ -120,12 +120,13 @@ header {
                 align-items: center;
                 justify-content: center;
 			    @include size(50%, 100%);
+                @include font-size(20px);
                 &:first-child {
-
+                  padding-left: 30px;
                 }
-              &:first-child + a {
-
-              }
+                &:first-child + span + a {
+                  padding-right: 40px;
+                }
 		    }
 	    }
     }
@@ -241,10 +242,22 @@ header {
              @include transition(0.3s);
            }
           .items-botonera-desk {
-            padding: 30px 0 0 20px;
+            padding: 30px 0 0 0;
+            li {
+              display: inline-block;
+            }
             .redes-sociales {
+              padding-left: 10px;
+            }
+            &:first-child + .items-botonera-desk {
+              padding-left: 90px;
+            }
+            &:last-child {
               li {
-                display: inline-block;
+                padding-right: 8px;
+                a {
+                  @include font-size(14px);
+                }
               }
             }
           }
@@ -368,9 +381,6 @@ header {
             color: $white;
             font-family: $FuturaLight;
             text-align: center;
-            //@include size(70%, auto);
-            //@include font-size(25px);
-            //@include line-height(35px);
             @include size(95%, auto);
             @include font-size(15px);
             @include line-height(20px);
