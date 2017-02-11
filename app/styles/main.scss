@@ -341,9 +341,12 @@ header {
             color: $white;
             font-family: $FuturaLight;
             text-align: center;
-            @include size(70%, auto);
-            @include font-size(25px);
-            @include line-height(35px);
+            //@include size(70%, auto);
+            //@include font-size(25px);
+            //@include line-height(35px);
+            @include size(95%, auto);
+            @include font-size(15px);
+            @include line-height(20px);
           }
         }
         .slider {
@@ -375,18 +378,22 @@ header {
       flex-direction: column;
       justify-content: center;
       height: 300px;
+      .info-talleres {
+        padding-top: 70px !important;
+      }
       .info-home {
         padding: 0 30px;
         text-align: center;
-        p {
-          @include size(70%,auto);
-        }
-      }
         h2 {
           padding: 20px 0;
           color: $red;
           text-transform: uppercase;
+          @include font-size(25px);
         }
+        p {
+          @include font-size(20px)
+        }
+      }
         .overlay-btn {
           @include size(58px, 58px);
           @include border-radius(50%);
@@ -437,6 +444,11 @@ header {
           min-height: 450px;
           .overlay-pantalla {
             @include size(100%,450px);
+            p {
+              @include size(80%, auto);
+              @include font-size(20px);
+              @include line-height(30px);
+            }
           }
           .slider {
             min-height: 450px;
@@ -462,10 +474,20 @@ header {
             border: 2px solid whitesmoke;
           }
         }
+        .info-talleres {
+          padding-top: 40px !important;
+          padding-right: 0 !important;
+        }
         .info-home {
           min-height: 200px;
           text-align: left;
           padding-top: 20px;
+          h2 {
+            @include font-size(20px);
+          }
+          p {
+            @include font-size(18px)
+          }
         }
         .overlay-btn {
           display: inline-block;
@@ -481,6 +503,11 @@ header {
           min-height: 600px;
           .overlay-pantalla {
             @include size(100%,600px);
+            p {
+              @include size(80%, auto);
+              @include font-size(25px);
+              @include line-height(37px);
+            }
           }
           .slider {
             min-height: 600px;
@@ -497,6 +524,10 @@ header {
             min-height: 400px;
           }
         }
+        .info-talleres {
+          padding-top: 20px !important;
+          padding-right: 30px !important;
+        }
         .info-home {
           min-height: 200px;
         }
@@ -510,6 +541,11 @@ header {
           min-height: 800px;
           .overlay-pantalla {
             @include size(100%,800px);
+            p {
+              @include size(70%, auto);
+              @include font-size(25px);
+              @include line-height(35px);
+            }
           }
           .slider {
             min-height: 800px;
@@ -523,11 +559,14 @@ header {
         min-height: 800px;
         .imgs-fijas {
           img {
-            min-height: 550px;
+            min-height: 530px;
           }
         }
         .info-home {
           min-height: 250px;
+          p {
+            @include size(70%,auto);
+          }
         }
       }
     }
