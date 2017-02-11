@@ -689,7 +689,7 @@ footer {
         @include size(100%,48px);
         a{
           color: $darkGray;
-          @include font-size(14px);
+          @include font-size(16px);
         }
       }
     }

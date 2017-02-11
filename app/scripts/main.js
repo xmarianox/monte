@@ -11,6 +11,49 @@ function mobileVsDesk(){
         }
     }
 }
+//Sticky nav
+function navs(){
+    var nav = '';
+    var windowWidth = parseInt($(window).width());
+    if(windowWidth >= 752) {
+        nav = $('.botonera-desktop');
+    }else{
+        nav = $('.cabecera');
+    }
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1){
+            nav.addClass('sticky');
+        }
+        else{
+            nav.removeClass('sticky');
+        }
+    });
+}
+
+function links() {
+    var botones = $('a');
+    botones.each(function(index, value){
+        $(value).click(function (e){
+            e.preventDefault();
+        });
+        switch($(value).html()){
+            case 'acciones': $(value).click(function(){sectionClick('acciones')});
+                break;
+            case 'residencia': $(value).click(function(){sectionClick('residencia')});
+                break;
+            case 'talleres': $(value).click(function(){sectionClick('talleres')});
+                break;
+            case 'español': $(value).click(function(){sectionClick('español')});
+                break;
+            case 'english': $(value).click(function(){sectionClick('english')});
+                break;
+        }
+    });
+}
+
+function sectionClick(section){
+    alert(section);
+}
 
 $(document).ready(function(){
 
@@ -63,27 +106,8 @@ $(document).ready(function(){
         }
     });
 
-    //Sticky nav
-    function navs(){
-        var nav = '';
-        var windowWidth = parseInt($(window).width());
-        if(windowWidth >= 752) {
-            nav = $('.botonera-desktop');
-        }else{
-            nav = $('.cabecera');
-        }
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 1){
-                nav.addClass('sticky');
-            }
-            else{
-                nav.removeClass('sticky');
-            }
-        });
-    }
-
-
     //Imgs mobile y desk
     mobileVsDesk();
     navs();
+    links();
 });
