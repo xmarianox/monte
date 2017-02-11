@@ -329,15 +329,46 @@ header {
   border-bottom: solid 1px $gray;
   text-align: center;
   min-height: 200px;
+  margin: 0 auto;
   p {
     margin: 0 auto;
-    @include size(80%, auto);
   }
   a {
     color: $red;
   }
   i {
     margin: 10px auto;
+  }
+  .home-structure {
+    display: block;
+    @include size(90%, auto);
+    @media #{$breakpoint-tablet-port}{
+      @include size(50%, auto);
+    }
+  }
+  .other-structure {
+    display: none;
+    h1 {
+      font-family: $FuturaLight;
+      color: $red;
+      margin: 50px auto 30px;
+      @include font-size(24px);
+    }
+    p {
+      margin-bottom: 30px;
+    }
+    @include size(90%, auto);
+    @media #{$breakpoint-tablet-port}{
+      width: 60%;
+      margin: 0 20%;
+    }
+    @media #{$breakpoint-laptop-big}{
+      width: 40%;
+      margin: 0 30%;
+    }
+    #consulta_section {
+      @include font-size(18px);
+    }
   }
 }
 
@@ -346,8 +377,8 @@ header {
   width: 100%;
   margin: 0 auto;
   @media #{$breakpoint-tablet-port}{
-    width: 50%;
-    margin: 0 25%;
+    width: 60%;
+    margin: 0 20%;
   }
   @media #{$breakpoint-laptop-big}{
     width: 40%;
@@ -700,11 +731,10 @@ footer {
         align-items: center;
         justify-content: center;
         border-bottom: solid 1px $gray;
+        font-family: $FuturaBook;
+        color: $darkGray;
         @include size(100%,48px);
-        a{
-          color: $darkGray;
-          @include font-size(16px);
-        }
+        @include font-size(16px);
       }
     }
   }

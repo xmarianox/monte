@@ -36,13 +36,13 @@ function links() {
             e.preventDefault();
         });
         switch($(value).html()){
-            case 'Monte': $(value).click(function(){sectionClick('home')});
+            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home')});
                 break;
-            case 'acciones': $(value).click(function(){sectionClick('acciones')});
+            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones')});
                 break;
-            case 'residencia': $(value).click(function(){sectionClick('residencia')});
+            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia')});
                 break;
-            case 'talleres': $(value).click(function(){sectionClick('talleres')});
+            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres')});
                 break;
             case 'español': $(value).click(function(){sectionClick('español')});
                 break;
@@ -50,6 +50,48 @@ function links() {
                 break;
         }
     });
+}
+function setAbout(section) {
+    var sectionAbout = $('#about');
+    var titulo = $('#about h1');
+    var contenido = $('#about .about-content');
+    var consulta = $('#consulta_section span');
+    if(section === 'home') {
+        $('.home-structure').css('display','block');
+        $('.other-structure').css('display','none');
+    }else{
+        $('.home-structure').css('display','none');
+        $('.other-structure').css('display','block');
+        switch(section){
+            case 'acciones':
+                $(titulo).html(section);
+                if($(contenido).empty()){
+                    $(contenido)
+                        .append($('<p></p>').html('encuentros de talleres, exposiciones y presentaciones vinculadas al arte.'))
+                        .append($('<p></p>').html('las acciones a lo largo del año se organizan en relación con las artes visuales: la pintura, la escultura y la imagen fija. también se reciben propuestas teniendo a disposición una sala equipada con: sillas, wi-fi, proyector, mesas. '))
+
+                }
+                $(consulta).html(section);
+            break;
+            case 'residencia':
+                $(titulo).html(section);
+                if($(contenido).empty()){
+                    $(contenido)
+                        .append($('<p></p>').html('estimular el dialogo creativo mediante el intercambio y la hospitalidad cultural, por periodos de uno a tres meses.'))
+                        .append($('<p></p>').html('la residencia es la posibilidad para artistas y demás creativos profesionales para residir y trabajar temporalmente fuera de su locación habitual. Esta oportunidad ofrece condiciones que conducen a la creatividad y provee de un contexto inspirador como también de facilidades prácticas, conexiones y la alternativa de exposición frente a una audiencia determinada. '))
+                }
+                $(consulta).html(section);
+            break;
+            case 'talleres':
+                $(titulo).html(section);
+                if($(contenido).empty()){
+                    $(contenido)
+                        .append($('<p></p>').html('espacios personales de trabajo destinado para artistas visuales, escritores, productores, investigadores, editores, o personas a fin con las artes y el trabajo de oficio: pintura, escultura, imagen fija y en movimiento. '))
+                        .append($('<p></p>').html('los talleres son 10 salas que varían en sus dimensiones y luminosidad. los alquileres son por un periodo mínimo de un año.'))}
+                $(consulta).html(section);
+            break;
+        }
+    }
 }
 
 function sectionClick(section){
@@ -60,7 +102,6 @@ function sectionClick(section){
         }
         if($(value).attr('id') === section) {
             $(value).css('display','block');
-            console.log('yep');
         }
     });
 }
