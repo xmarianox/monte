@@ -240,8 +240,9 @@ header {
                     padding: 0 30px;
                   }
                   a{
-                    font-family: $Futura;
+                    font-family: $FuturaBook;
                     text-transform: uppercase;
+                    letter-spacing: 1px;
                     @include font-size(14px);
                   }
                 }
@@ -338,6 +339,11 @@ header {
           @include transition(0.5s);
           p {
             color: $white;
+            font-family: $FuturaLight;
+            text-align: center;
+            @include size(70%, auto);
+            @include font-size(25px);
+            @include line-height(35px);
           }
         }
         .slider {
@@ -372,6 +378,9 @@ header {
       .info-home {
         padding: 0 30px;
         text-align: center;
+        p {
+          @include size(70%,auto);
+        }
       }
         h2 {
           padding: 20px 0;
