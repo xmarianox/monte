@@ -25,11 +25,19 @@
 }
 
 //General classes
+.botonera-lang {
+  a {
+    font-family: $FuturaBold !important;
+    text-transform: uppercase;
+  }
+}
+
 .only-mobile {
   @media #{$breakpoint-tablet-port} {
     display: none;
   }
 }
+
 .block {
   display: block;
 }
@@ -101,15 +109,23 @@ header {
           //}
         }
       }
-	    &-lenguages {
+	    .botonera-lang {
+          span {
+            border-left: 2px solid #4b4b4b;
+            opacity: 0.7;
+            @include size(1px, 30px);
+          }
 		    a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 			    @include size(50%, 100%);
-          //&:first-child {
-          //  border-right: solid 2px $white;
-          //}
+                &:first-child {
+
+                }
+              &:first-child + a {
+
+              }
 		    }
 	    }
     }
@@ -129,8 +145,14 @@ header {
         @include font-size(40px);
       }
       ul {
+        position: absolute;
+        top: 20px;
+        right: 70px;
         li{
           display: inline-block;
+          a {
+            @include font-size(20px);
+          }
         }
       }
       .btn-hamburger {
