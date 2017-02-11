@@ -25,6 +25,13 @@
 }
 
 //General classes
+.visibility {
+  display: none;
+}
+#home {
+  display: block;
+}
+
 .botonera-lang {
   a {
     font-family: $FuturaBold !important;
@@ -662,6 +669,13 @@ header {
   }
 }
 
+//Talleres
+
+.content-talleres {
+  img {
+    @include size(100%, auto);
+  }
+}
 
 //Footer
 

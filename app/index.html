@@ -50,6 +50,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,12 +81,12 @@
               <li><a href="#">acciones</a></li>
               <li><a href="#">residencia</a></li>
               <li><a href="#">talleres</a></li>
-              <li class="botonera-lang"><a href="">español</a><span></span><a href="">ingles</a></li>
+              <li class="botonera-lang"><a href="">español</a><span></span><a href="">english</a></li>
               <li><a href="">redes</a><a href="">redes</a><a href="">redes</a></li>
             </ul>
           </div>
             <div class="cabecera">
-                <h1>Monte</h1>
+                <h1><a href="#">Monte</a></h1>
                 <div>
                   <div>
                     <ul>
@@ -118,7 +119,7 @@
             </ul>
           </div> <!--Redes sociales-->
           <div class="items-botonera-desk">
-            <h1><i>Monte</i></h1>
+            <h1><a href="#">Monte</a></h1>
             <hr>
             <nav>
             <ul>
@@ -145,8 +146,8 @@
             <p>Monte es un proyecto auto-gestionado por artistas para artistas y personas vinculadas al universo creativo.</p>
           </article>
         </section> <!--Sobre la seccion-->
-
-        <section class="content">
+        <div class="visibility animated fadeInLeftBig" id="home">
+          <section class="content">
 
           <article class="content-home">
             <div class="bloque-1">
@@ -298,8 +299,9 @@
 
 
         </section> <!--Home Content-->
-
-        <section class="content invisible contain">
+        </div>
+        <div class="visibility animated fadeInLeftBig" id="acciones">
+          <section class="content contain">
           <article class="content-acciones">
             <picture>
               <source srcset="images/desktop/acciones/flyer.jpg" media="(min-width: 752px)"/>
@@ -316,8 +318,9 @@
 
           </article>
         </section> <!--Content Acciones-->
-
-        <section class="content invisible contain">
+        </div>
+        <div class="visibility animated fadeInLeftBig" id="talleres">
+          <section class="content contain">
           <article class="content-talleres">
 
             <picture>
@@ -327,8 +330,9 @@
 
           </article>
         </section> <!--Content Talleres-->
-
-        <section class="content invisible contain">
+        </div>
+        <div class="visibility animated fadeInLeftBig" id="residencia">
+          <section class="content contain">
           <article class="content-residencias">
             <p><span class="block">estos son algunos</span>
               de nuestros residentes:</p>
@@ -345,13 +349,13 @@
               <hr>
             </div> <!--Residencia 1-->
           </article>
-        </section> <!--Content Residencias-->
-
+        </section> <!--Content Residencia-->
+        </div>
       </main>
 
       <footer>
         <div class="logo">
-          <h1>Monte</h1>
+          <h1><a href="#">Monte</a></h1>
           <i class="ic ic_Monte"></i>
         </div>
         <nav>

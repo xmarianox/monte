@@ -7,7 +7,6 @@ function mobileVsDesk(){
             var mod = src.split('/');
             src = mod[0] + '/' + 'desktop/' + mod[2] + '/' + mod[3];
             $(imgsSlider[i]).attr('src',src);
-            console.log($(imgsSlider[i]));
         }
     }
 }
@@ -37,6 +36,8 @@ function links() {
             e.preventDefault();
         });
         switch($(value).html()){
+            case 'Monte': $(value).click(function(){sectionClick('home')});
+                break;
             case 'acciones': $(value).click(function(){sectionClick('acciones')});
                 break;
             case 'residencia': $(value).click(function(){sectionClick('residencia')});
@@ -52,11 +53,19 @@ function links() {
 }
 
 function sectionClick(section){
-    alert(section);
+    var sections = $('.visibility');
+    sections.each(function(index,value){
+        if($(value).attr('id') !== 'about'){
+            $(value).css('display','none');
+        }
+        if($(value).attr('id') === section) {
+            $(value).css('display','block');
+            console.log('yep');
+        }
+    });
 }
 
 $(document).ready(function(){
-
     //Slider Config
     $('.slider').slick({
         arrows: false,
