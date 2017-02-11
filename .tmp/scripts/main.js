@@ -76,9 +76,9 @@ $(document).ready(function () {
         }
         $(window).scroll(function () {
             if ($(this).scrollTop() > 1) {
-                nav.addClass("sticky");
+                nav.addClass('sticky');
             } else {
-                nav.removeClass("sticky");
+                nav.removeClass('sticky');
             }
         });
     }
