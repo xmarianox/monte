@@ -32,6 +32,9 @@ function navs() {
 
 function links() {
     var botones = $('a');
+    $('.visibility').each(function (index, value) {
+        var id = $(value).attr('id');
+    });
     botones.each(function (index, value) {
         $(value).click(function (e) {
             e.preventDefault();
@@ -55,16 +58,6 @@ function links() {
             case 'talleres':
                 $(value).click(function () {
                     sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg');
-                });
-                break;
-            case 'español':
-                $(value).click(function () {
-                    sectionClick('español');
-                });
-                break;
-            case 'english':
-                $(value).click(function () {
-                    sectionClick('english');
                 });
                 break;
         }
@@ -102,9 +95,8 @@ function setHeader(img) {
 }
 
 function setAbout(section) {
-    var sectionAbout = $('#about');
-    var titulo = $('#about h1');
-    var contenido = $('#about .about-content');
+    var titulo = $('.about-title');
+    var contenido = $('.about-content');
     var consulta = $('#consulta_section span');
     if (section === 'home') {
         $('.home-structure').css('display', 'block');
@@ -114,25 +106,25 @@ function setAbout(section) {
         $('.other-structure').css('display', 'block');
         switch (section) {
             case 'acciones':
-                $(titulo).html(section);
+                $(titulo).html(section).addClass('translate-js').attr('data-string', 'HOME_ACTIONS_TITLE');
                 if ($(contenido).empty()) {
-                    $(contenido).append($('<p></p>').html('encuentros de talleres, exposiciones y presentaciones vinculadas al arte.')).append($('<p></p>').html('las acciones a lo largo del año se organizan en relación con las artes visuales: la pintura, la escultura y la imagen fija. también se reciben propuestas teniendo a disposición una sala equipada con: sillas, wi-fi, proyector, mesas. '));
+                    $(contenido).append($('<p></p>').html('encuentros de talleres, exposiciones y presentaciones vinculadas al arte.').addClass('translate-js').attr('data-string', 'HOME_ACTIONS_P')).append($('<p></p>').html('las acciones a lo largo del año se organizan en relación con las artes visuales: la pintura, la escultura y la imagen fija. también se reciben propuestas teniendo a disposición una sala equipada con: sillas, wi-fi, proyector, mesas. ').addClass('translate-js').attr('data-string', 'HOME_ACTIONS_OVER'));
                 }
-                $(consulta).html(section);
+                $(consulta).html(section + ': ');
                 break;
             case 'residencia':
-                $(titulo).html(section);
+                $(titulo).html(section).addClass('translate-js').attr('data-string', 'HOME_RESIDENCE_TITLE');
                 if ($(contenido).empty()) {
-                    $(contenido).append($('<p></p>').html('estimular el dialogo creativo mediante el intercambio y la hospitalidad cultural, por periodos de uno a tres meses.')).append($('<p></p>').html('la residencia es la posibilidad para artistas y demás creativos profesionales para residir y trabajar temporalmente fuera de su locación habitual. Esta oportunidad ofrece condiciones que conducen a la creatividad y provee de un contexto inspirador como también de facilidades prácticas, conexiones y la alternativa de exposición frente a una audiencia determinada. '));
+                    $(contenido).append($('<p></p>').html('estimular el dialogo creativo mediante el intercambio y la hospitalidad cultural, por periodos de uno a tres meses.').addClass('translate-js').attr('data-string', 'HOME_RESIDENCE_P')).append($('<p></p>').html('la residencia es la posibilidad para artistas y demás creativos profesionales para residir y trabajar temporalmente fuera de su locación habitual. Esta oportunidad ofrece condiciones que conducen a la creatividad y provee de un contexto inspirador como también de facilidades prácticas, conexiones y la alternativa de exposición frente a una audiencia determinada. ').addClass('translate-js').attr('data-string', 'HOME_RESIDENCE_OVER'));
                 }
-                $(consulta).html(section);
+                $(consulta).html(section + ': ');
                 break;
             case 'talleres':
-                $(titulo).html(section);
+                $(titulo).html(section).addClass('translate-js').attr('data-string', 'HOME_WORKSHOPS_TITLE');
                 if ($(contenido).empty()) {
-                    $(contenido).append($('<p></p>').html('espacios personales de trabajo destinado para artistas visuales, escritores, productores, investigadores, editores, o personas a fin con las artes y el trabajo de oficio: pintura, escultura, imagen fija y en movimiento. ')).append($('<p></p>').html('los talleres son 10 salas que varían en sus dimensiones y luminosidad. los alquileres son por un periodo mínimo de un año.'));
+                    $(contenido).append($('<p></p>').html('espacios personales de trabajo destinado para artistas visuales, escritores, productores, investigadores, editores, o personas a fin con las artes y el trabajo de oficio: pintura, escultura, imagen fija y en movimiento. ').addClass('translate-js').attr('data-string', 'HOME_WORKSHOPS_P')).append($('<p></p>').html('los talleres son 10 salas que varían en sus dimensiones y luminosidad. los alquileres son por un periodo mínimo de un año.').addClass('translate-js').attr('data-string', 'HOME_WORKSHOPS_OVER'));
                 }
-                $(consulta).html(section);
+                $(consulta).html(section + ': ');
                 break;
         }
     }
@@ -147,6 +139,29 @@ function sectionClick(section) {
         if ($(value).attr('id') === section) {
             $(value).css('display', 'block');
         }
+    });
+}
+
+function translate() {
+    $('.eng-btn').click(function () {
+        $('.eng-btn').css('color', '#929292');
+        $('.esp-btn').css('color', 'white');
+        $.getJSON('../lang/lang_EN.json').done(function (data) {
+            $('.translate-js').each(function () {
+                var cadena = $(this).attr('data-string');
+                $(this).text(data[cadena]);
+            });
+        });
+    });
+    $('.esp-btn').click(function () {
+        $('.esp-btn').css('color', '#929292');
+        $('.eng-btn').css('color', 'white');
+        $.getJSON('../lang/lang_ES.json').done(function (data) {
+            $('.translate-js').each(function () {
+                var cadena = $(this).attr('data-string');
+                $(this).text(data[cadena]);
+            });
+        });
     });
 }
 
@@ -204,5 +219,6 @@ $(document).ready(function () {
     mobileVsDesk();
     navs();
     links();
+    translate();
 });
 //# sourceMappingURL=main.js.map

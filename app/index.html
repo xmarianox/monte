@@ -78,10 +78,10 @@
           <div class="pantalla-mobile">
             <div></div>
             <ul>
-              <li><a href="#">acciones</a></li>
-              <li><a href="#">residencia</a></li>
-              <li><a href="#">talleres</a></li>
-              <li class="botonera-lang"><a href="">español</a><span></span><a href="">english</a></li>
+              <li><a class="translate-js" data-string="HOME_ACTIONS_TITLE" href="#">acciones</a></li>
+              <li><a class="translate-js" data-string="HOME_RESIDENCE_TITLE" href="#">residencia</a></li>
+              <li><a class="translate-js" data-string="HOME_WORKSHOPS_TITLE" href="#">talleres</a></li>
+              <li class="botonera-lang"><a class="esp-btn" href="">español</a><span></span><a class="eng-btn" href="">english</a></li>
               <li><a href="">redes</a><a href="">redes</a><a href="">redes</a></li>
             </ul>
           </div>
@@ -90,8 +90,8 @@
                 <div>
                   <div>
                     <ul>
-                      <li class="botonera-lang"><a href="">ESP</a></li>
-                      <li class="botonera-lang"><a href="">ENG</a></li>
+                      <li class="botonera-lang"><a class="esp-btn" href="#">ESP</a></li>
+                      <li class="botonera-lang"><a class="eng-btn" href="#">ENG</a></li>
                     </ul>
                   </div>
                   <div><a href="javascript:;" id="toggle_menu" class="btn-hamburger"><span class="lines"></span></a></div> <!-- Menu btn -->
@@ -123,16 +123,16 @@
             <hr>
             <nav>
             <ul>
-              <li><a href="">acciones</a></li>
-              <li><a href="">residencia</a></li>
-              <li><a href="">talleres</a></li>
+              <li><a class="translate-js" data-string="HOME_ACTIONS_TITLE" href="">acciones</a></li>
+              <li><a class="translate-js" data-string="HOME_RESIDENCE_TITLE" href="">residencia</a></li>
+              <li><a class="translate-js" data-string="HOME_WORKSHOPS_TITLE" href="">talleres</a></li>
             </ul>
           </nav> <!--Botonera del sitio-->
           </div> <!--Logo y botonera-->
           <div class="items-botonera-desk">
           <ul>
-            <li class="botonera-lang"><a href="">español</a></li>
-            <li class="botonera-lang"><a href="">english</a></li>
+            <li class="botonera-lang"><a class="esp-btn" href="">español</a></li>
+            <li class="botonera-lang"><a class="eng-btn" href="">english</a></li>
           </ul>
         </div> <!--Botonera lenguaje-->
         </div> <!--Menu Desktop-->
@@ -147,13 +147,13 @@
         <section id="about">
           <article class="home-structure animated fadeInRightBig">
             <i class="ic ic_Monte"></i>
-            <p>Monte es un proyecto auto-gestionado por artistas para artistas y personas vinculadas al universo creativo.</p>
+            <p class="translate-js" data-string="HOME_INTRO">Monte es un proyecto auto-gestionado por artistas para artistas y personas vinculadas al universo creativo.</p>
           </article>
           <article class="other-structure">
-            <h1></h1>
+            <h1 class="about-title"></h1>
             <div class="about-content"></div>
             <i class="ic ic_Monte"></i>
-            <p id="consulta_section">Para consultas sobre <span></span>: <a href="">info@residenciamonte.org</a></p>
+            <p id="consulta_section">Para consultas sobre <span></span> <a href="">info@residenciamonte.org</a></p>
           </article>
         </section> <!--Sobre la seccion-->
         <div class="visibility animated fadeInLeftBig" id="home">
@@ -162,7 +162,7 @@
           <article class="content-home">
             <div class="bloque-1">
               <div class="slider-content">
-                  <div class="overlay-pantalla">
+                  <div data-string="HOME_ACTIONS_OVER" class="translate-js overlay-pantalla">
                     <p>las acciones a lo largo del año se organizan en relación con las artes visuales:
                       la pintura, la escultura y la imagen fija. también se reciben propuestas teniendo
                       a disposición una sala equipada con: sillas, wi-fi, proyector, mesas. </p>
@@ -202,8 +202,8 @@
                 </picture>
               </div> <!-- 2 Imagenes //HIDE MOBILE-->
               <div class="info-home">
-                <h2>Acciones</h2>
-                <p>encuentros de talleres, exposiciones y presentaciones vinculadas al arte.</p> <!-- Informacion -->
+                <h2 data-string="HOME_ACTIONS_TITLE" class="translate-js" >Acciones</h2>
+                <p data-string="HOME_ACTIONS_P" class="translate-js" >encuentros de talleres, exposiciones y presentaciones vinculadas al arte.</p> <!-- Informacion -->
                 <span class="overlay-btn">+</span>
               </div>
             </div> <!--Bloque 2-->
@@ -213,7 +213,7 @@
             <div class="bloque-1">
               <div class="slider-content">
                 <div class="overlay-pantalla">
-                  <p>la residencia es la posibilidad para artistas y demás creativos profesionales para residir y trabajar temporalmente fuera de su locación habitual. Esta oportunidad ofrece condiciones que conducen a la creatividad y provee de un contexto inspirador como también de facilidades prácticas, conexiones y la alternativa de exposición frente a una audiencia determinada. </p>
+                  <p data-string="HOME_RESIDENCE_OVER" class="translate-js" >la residencia es la posibilidad para artistas y demás creativos profesionales para residir y trabajar temporalmente fuera de su locación habitual. Esta oportunidad ofrece condiciones que conducen a la creatividad y provee de un contexto inspirador como también de facilidades prácticas, conexiones y la alternativa de exposición frente a una audiencia determinada. </p>
                 </div>
                 <div class="slider">
                   <div>
@@ -250,8 +250,8 @@
                 </picture>
               </div> <!-- 2 Imagenes //HIDE MOBILE-->
               <div class="info-home">
-                <h2>Residencia</h2>
-                <p>
+                <h2 data-string="HOME_RESIDENCE_TITLE" class="translate-js" >Residencia</h2>
+                <p data-string="HOME_RESIDENCE_P" class="translate-js" >
                   estimular el dialogo creativo mediante el intercambio y la hospitalidad cultural, por periodos de uno a tres meses.
                 </p> <!-- Informacion -->
                 <span class="overlay-btn">+</span>
@@ -263,7 +263,7 @@
             <div class="bloque-1">
               <div class="slider-content">
                 <div class="overlay-pantalla">
-                  <p>los talleres son 10 salas que varían en sus dimensiones y luminosidad. los alquileres son por un periodo mínimo de un año.</p>
+                  <p data-string="HOME_WORKSHOPS_OVER" class="translate-js" >los talleres son 10 salas que varían en sus dimensiones y luminosidad. los alquileres son por un periodo mínimo de un año.</p>
                 </div>
                 <div class="slider">
                   <div>
@@ -300,8 +300,8 @@
                 </picture>
               </div> <!-- 2 Imagenes //HIDE MOBILE-->
               <div class="info-home info-talleres">
-                <h2>Talleres</h2>
-                <p>espacios personales de trabajo destinado para artistas visuales, escritores, productores, investigadores, editores, o personas a fin con las artes y el trabajo de oficio: pintura, escultura, imagen fija y en movimiento.</p> <!-- Informacion -->
+                <h2 data-string="HOME_WORKSHOPS_TITLE" class="translate-js" >Talleres</h2>
+                <p data-string="HOME_WORKSHOPS_P" class="translate-js" >espacios personales de trabajo destinado para artistas visuales, escritores, productores, investigadores, editores, o personas a fin con las artes y el trabajo de oficio: pintura, escultura, imagen fija y en movimiento.</p> <!-- Informacion -->
                 <span class="overlay-btn">+</span>
               </div>
             </div> <!--Bloque 2-->
@@ -335,7 +335,7 @@
 
             <picture>
               <source srcset="images/desktop/talleres/plano.jpg" media="(min-width: 752px)"/>
-              <img srcset="images/mobile/acciones/plano.jpg" alt="Sample pic"/>
+              <img srcset="images/mobile/talleres/plano.jpg" alt="Sample pic"/>
             </picture>
 
           </article>
