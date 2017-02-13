@@ -1,0 +1,5 @@
+//Importante:
+//
+//- En about, cada vez que un texto se crea con la seccion, añadirle la clase y el data-string.
+//- Asegurarse que al hacer el gulp no se borren los json
+//- Hacer funcion similar a la de about pero con el header de cada seccion

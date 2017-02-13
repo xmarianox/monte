@@ -28,12 +28,12 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   return gulp.src('app/scripts/**/*.js')
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
+      .pipe($.plumber())
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest('.tmp/scripts'))
+      .pipe(reload({stream: true}));
 });
 
 function lint(files, options) {
@@ -81,6 +81,14 @@ gulp.task('extras', () => {
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+});
+
+gulp.task('json', () => {
+  return gulp.src([
+    'app/lang/**/*'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/lang'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
@@ -156,7 +164,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras','json'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
