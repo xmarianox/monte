@@ -1,3 +1,7 @@
+//Nav sections : home en display none en la seccion home
+//Cuando seccion !== home, el nav tiene una class sticky que no cambia
+//Español none en pantalla mobile
+
 function mobileVsDesk(){
     var imgsSlider = $('.img-slider');
     var windowWidth = parseInt($(window).width());
@@ -11,55 +15,59 @@ function mobileVsDesk(){
     }
 }
 //Sticky nav
-function navs(){
+function navs(actual){
     var nav = '';
     var windowWidth = parseInt($(window).width());
-    if(windowWidth >= 752) {
-        nav = $('.botonera-desktop');
+        if(windowWidth >= 752) {
+            nav = $('.botonera-desktop');
+        }else{
+            nav = $('.cabecera');
+        }
+        console.log($('.botonera-home-btn').css('display'));
+    if((actual === 'home')||(actual === undefined)) {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 1) {
+                nav.addClass('sticky');
+            }
+            else {
+                nav.removeClass('sticky');
+            }
+        });
     }else{
-        nav = $('.cabecera');
-    }
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 1){
+            nav.addClass('sticky');
+        if ($(this).scrollTop() < 1) {
             nav.addClass('sticky');
         }
-        else{
-            nav.removeClass('sticky');
-        }
-    });
+            console.log('entra');
+            $('.botonera-home-btn').css('display','inline-block');
+            $('.botonera-home-btn + li').css('padding-left','30px');
+    }
 }
 
 function links() {
     var botones = $('a');
-    $('.visibility').each(function(index,value) {
-        var id = $(value).attr('id');
-    });
     botones.each(function(index, value){
         $(value).click(function (e){
             e.preventDefault();
         });
         switch($(value).html()){
-            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg')});
+            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home')});
                 break;
-            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones');setHeader('acciones-header.jpg')});
+            case 'home': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home')});
                 break;
-            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia');setHeader('residencia-header.jpg')});
+            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones');setHeader('acciones-header.jpg');navs('acciones')});
                 break;
-            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg')});
+            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia');setHeader('residencia-header.jpg');navs('residencia')});
+                break;
+            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg');navs('talleres')});
                 break;
         }
     });
 }
 
 function setHeader(img) {
-// <picture class="fondo-header">
-//         <source srcset="images/desktop/Monte-home_intro.jpg" media="(min-width: 752px)"/>
-//         <img srcset="images/mobile/Monte-home_intro.jpg" alt="Sample pic"/>
-//         </picture>
-    var url = '';
     var deskImg = $('.fondo-header source');
     var mobileImg = $('.fondo-header img');
-    var windowWidth = parseInt($(window).width());
     switch(img) {
         case 'Monte-home_intro.jpg':
             $(deskImg).attr('srcset','images/desktop/'+img);
