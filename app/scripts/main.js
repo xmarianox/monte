@@ -36,13 +36,13 @@ function links() {
             e.preventDefault();
         });
         switch($(value).html()){
-            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home')});
+            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg')});
                 break;
-            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones')});
+            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones');setHeader('acciones-header.jpg')});
                 break;
-            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia')});
+            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia');setHeader('residencia-header.jpg')});
                 break;
-            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres')});
+            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg')});
                 break;
             case 'español': $(value).click(function(){sectionClick('español')});
                 break;
@@ -51,6 +51,37 @@ function links() {
         }
     });
 }
+
+function setHeader(img) {
+// <picture class="fondo-header">
+//         <source srcset="images/desktop/Monte-home_intro.jpg" media="(min-width: 752px)"/>
+//         <img srcset="images/mobile/Monte-home_intro.jpg" alt="Sample pic"/>
+//         </picture>
+    var url = '';
+    var deskImg = $('.fondo-header source');
+    var mobileImg = $('.fondo-header img');
+    var windowWidth = parseInt($(window).width());
+    switch(img) {
+        case 'Monte-home_intro.jpg':
+            $(deskImg).attr('srcset','images/desktop/'+img);
+            $(mobileImg).attr('srcset','images/mobile/'+img);
+            break;
+        case 'acciones-header.jpg':
+            $(deskImg).attr('srcset','images/desktop/acciones/'+img);
+            $(mobileImg).attr('srcset','images/mobile/acciones/'+img);
+            break;
+        case 'residencia-header.jpg':
+            $(deskImg).attr('srcset','images/desktop/residencia/'+img);
+            $(mobileImg).attr('srcset','images/mobile/residencia/'+img);
+            break;
+        case 'talleres-header.jpg':
+            $(deskImg).attr('srcset','images/desktop/talleres/'+img);
+            $(mobileImg).attr('srcset','images/mobile/talleres/'+img);
+                break;
+    }
+    // $('header').css('background-image','url(../images/mobile/Monte-home_intro.jpg)');
+}
+
 function setAbout(section) {
     var sectionAbout = $('#about');
     var titulo = $('#about h1');

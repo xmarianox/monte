@@ -75,9 +75,16 @@
 //Header
 
 header {
-  background: url('../images/mobile/Monte-home_intro.jpg') no-repeat;
-  background-size: cover;
-  min-height: 400px;
+  //background-image: url('../images/mobile/Monte-home_intro.jpg');
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  //min-height: 400px;
+  .fondo-header {
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
   .botonera-mobile {
     .pantalla-mobile {
       position: fixed;
@@ -297,29 +304,6 @@ header {
             }
           }
    }
-  //Breakpoints header
-  @media #{$breakpoint-smartphone-medium-landscape} {
-    background-size: cover;
-    min-height: 500px;
-  }
-  @media #{$breakpoint-smartphone-big} {
-    background-size: cover;
-    min-height: 550px;
-  }
-  @media #{$breakpoint-smartphone-big-landscape} {
-    min-height: 700px;
-  }
-  @media #{$breakpoint-tablet-port} {
-    background: url('../images/desktop/Monte-home_intro.jpg') no-repeat;
-    background-size: cover;
-    min-height: 550px;
-  }
-  @media #{$breakpoint-tablet-land} {
-    min-height: 600px;
-  }
-  @media #{$breakpoint-laptop-small} {
-    min-height: 100vh;
-  }
 }
 
 #about {
