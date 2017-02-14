@@ -23,25 +23,26 @@ function navs(actual){
         }else{
             nav = $('.cabecera');
         }
-        console.log($('.botonera-home-btn').css('display'));
-    if((actual === 'home')||(actual === undefined)) {
+        if(actual === undefined){
+            actual = 'home';
+        }
+    if(actual !== 'home'){
+        nav.addClass('sticky');
+        $('.botonera-home-btn').css('display','inline-block');
+        $('.botonera-home-btn + li').css('padding-left','30px');
+    }else{
+        nav.removeClass('sticky');
+        $('.botonera-home-btn').css('display','none');
+        $('.botonera-home-btn + li').css('padding-left','0px');
+    }
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 1) {
-                nav.addClass('sticky');
-            }
-            else {
+            if ($(this).scrollTop() < 1 && actual === 'home') {
                 nav.removeClass('sticky');
             }
+            else {
+                nav.addClass('sticky');
+            }
         });
-    }else{
-            nav.addClass('sticky');
-        if ($(this).scrollTop() < 1) {
-            nav.addClass('sticky');
-        }
-            console.log('entra');
-            $('.botonera-home-btn').css('display','inline-block');
-            $('.botonera-home-btn + li').css('padding-left','30px');
-    }
 }
 
 function links() {
