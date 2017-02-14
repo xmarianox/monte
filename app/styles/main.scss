@@ -126,6 +126,13 @@ header {
             text-transform: uppercase;
             color: $white;
             @include font-size(25px);
+            svg {
+              width: 55px;
+              height: 55px;
+              path {
+                fill: $white;
+              }
+            }
           }
           //&:last-child{
           //  margin-bottom: 50px;
@@ -273,7 +280,18 @@ header {
               display: inline-block;
             }
             .redes-sociales {
-              padding-left: 10px;
+              path {
+                fill: $red;
+              }
+              svg{
+                width: 35px;
+                height: 35px;
+              }
+            }
+            .redes-header {
+              path {
+                fill: $white;
+              }
             }
             &:first-child + .items-botonera-desk {
               padding-left: 90px;
@@ -737,10 +755,21 @@ footer {
       }
     }
   }
+  .redes-footer {
+    path {
+      fill: $red;
+    }
+  }
   .redes-sociales {
+    svg{
+      width: 35px;
+      height: 35px;
+    }
     li {
       display: inline-block;
       padding: 10px 2px 10px 0;
+      width: 25px;
+      height: 25px;
     }
   }
 }
