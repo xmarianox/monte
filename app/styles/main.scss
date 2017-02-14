@@ -31,7 +31,9 @@
 #home {
   display: block;
 }
-
+.esp-btn {
+  color: rgb(146, 146, 146);
+}
 .botonera-lang {
   a {
     font-family: $FuturaBold !important;
@@ -79,6 +81,13 @@ header {
   //background-repeat: no-repeat;
   //background-size: cover;
   //min-height: 400px;
+  .fondo-cabecera-alt {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    background-color: $black;
+    @include size(100%,70px);
+  }
   .fondo-header {
     img {
       object-fit: cover;

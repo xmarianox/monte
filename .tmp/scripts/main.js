@@ -1,7 +1,5 @@
 'use strict';
 
-//Nav sections : home en display none en la seccion home
-//Cuando seccion !== home, el nav tiene una class sticky que no cambia
 //Español none en pantalla mobile
 
 function mobileVsDesk() {
@@ -30,6 +28,13 @@ function navs(actual) {
     }
     if (actual !== 'home') {
         nav.addClass('sticky');
+        if ($(nav).hasClass('cabecera')) {
+            console.log('yep');
+            $('.fondo-header img').css('margin-top', '70px');
+        } else {
+            // $(nav).css('background-color','rgba(0, 0, 0, 0.8)');
+            $('.fondo-header img').css('margin-top', '0');
+        }
         $('.botonera-home-btn').css('display', 'inline-block');
         $('.botonera-home-btn + li').css('padding-left', '30px');
     } else {
@@ -219,11 +224,13 @@ $(document).ready(function () {
             $('.pantalla-mobile').css('opacity', '0');
             $('.pantalla-mobile').css('height', '0');
             $('.pantalla-mobile').css('visibility', 'hidden');
+            $('.bar').css('display', 'inline-block');
         } else {
             $(this).addClass('active');
             $('.pantalla-mobile').css('opacity', '1');
             $('.pantalla-mobile').css('height', 'auto');
             $('.pantalla-mobile').css('visibility', 'visible');
+            $('.bar').css('display', 'none');
         }
     });
 
