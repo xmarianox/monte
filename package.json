@@ -1,4 +1,7 @@
 {
+  "name": "Monte",
+  "version": "0.1.0",
+  "homepage": "https://xmarianox.github.io/monte/",
   "private": true,
   "engines": {
     "node": ">=4"
@@ -16,6 +19,7 @@
     "gulp-cssnano": "^2.0.0",
     "gulp-eslint": "^3.0.0",
     "gulp-filter": "^4.0.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.0.1",
@@ -42,5 +46,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "gh-pages": "^0.12.0"
   }
 }
