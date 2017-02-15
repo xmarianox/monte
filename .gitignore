@@ -42,4 +42,5 @@ test/
 .DS_Store
 .idea/*
 .tmp/*
+.publish/*
 dist/*
