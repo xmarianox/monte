@@ -759,8 +759,30 @@ header {
 //Talleres
 
 .content-talleres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  picture:first-child {
+    @include size(100%, auto);
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
+  picture:first-child + picture {
+    @include size(100%, auto);
+  }
   img {
     @include size(100%, auto);
+    object-fit: cover;
+  }
+  @media #{$breakpoint-tablet-port}{
+    picture:first-child {
+      margin-bottom: 0;
+      margin-right: 40px;
+      width: calc(50% - 20px);
+    }
+    picture:first-child + picture {
+      width: calc(50% - 20px);
+    }
   }
 }
 
