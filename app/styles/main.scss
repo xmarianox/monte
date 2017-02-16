@@ -275,7 +275,7 @@ header {
              }
            }
           .items-botonera-desk {
-            padding: 30px 0 0 0;
+            padding: 20px 0 0 0;
             li {
               display: inline-block;
             }
@@ -293,10 +293,14 @@ header {
                 fill: $white;
               }
             }
+            &:first-child {
+              padding-left: 25px;
+            }
             &:first-child + .items-botonera-desk {
               padding-left: 90px;
             }
             &:last-child {
+              padding-right: 25px;
               li {
                 padding-right: 8px;
                 a {
@@ -308,7 +312,7 @@ header {
           .botonera-desktop:nth-child(2){
             text-align: center;
             h1 {
-              @include font-size(35px);
+              @include font-size(40px);
             }
             hr {
               margin: 12px 0 15px;
@@ -330,7 +334,7 @@ header {
                     font-family: $FuturaBook;
                     text-transform: uppercase;
                     letter-spacing: 1px;
-                    @include font-size(14px);
+                    @include font-size(18px);
                   }
                 }
               }
@@ -343,7 +347,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: solid 1px $gray;
   text-align: center;
   min-height: 200px;
   margin: 0 auto;
@@ -360,11 +363,18 @@ header {
     display: block;
     @include size(90%, auto);
     @media #{$breakpoint-tablet-port}{
-      @include size(50%, auto);
+      @include size(60%, auto);
+    }
+    @media #{$breakpoint-laptop-big}{
+      p {
+        @include font-size(30px);
+        @include line-height(36px);
+      }
     }
   }
   .other-structure {
     display: none;
+    border-bottom: solid 1px $gray;
     h1 {
       font-family: $FuturaLight;
       color: $red;
@@ -378,6 +388,10 @@ header {
     @media #{$breakpoint-tablet-port}{
       width: 60%;
       margin: 0 20%;
+      p {
+        @include font-size(30px);
+        @include line-height(36px);
+      }
     }
     @media #{$breakpoint-laptop-big}{
       width: 40%;
@@ -412,7 +426,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: 0 15px;
+    //padding: 0 15px;
     max-width: $grid-max-width;
     height: 500px;
     .bloque-1 {
@@ -548,7 +562,6 @@ header {
               width: 100%;
               min-height: 450px;
               object-fit: cover;
-              border-top: 2px solid whitesmoke;
             }
           }
         }
@@ -558,12 +571,14 @@ header {
         justify-content: flex-start;
         height: 450px;
         .imgs-fijas {
+          .withMarginR {
+            margin-right: 2px !important;
+          }
           img {
             display: block;
             width: 100%;
             max-height: 250px;
             object-fit: cover;
-            border: 2px solid whitesmoke;
           }
         }
         .info-talleres {
@@ -626,64 +641,70 @@ header {
       }
     }
     @media #{$breakpoint-laptop-small}{
-      min-height: 800px;
+      min-height: 700px;
       .bloque-1 {
-        min-height: 800px;
+        min-height: 700px;
         .slider-content {
-          min-height: 800px;
+          min-height: 700px;
           .overlay-pantalla {
-            @include size(100%,800px);
+            @include size(100%,700px);
             p {
               @include size(70%, auto);
-              @include font-size(25px);
-              @include line-height(35px);
+              @include font-size(36px);
+              @include line-height(45px);
             }
           }
           .slider {
-            min-height: 800px;
+            min-height: 700px;
             img {
-              min-height: 800px;
+              min-height: 700px;
             }
           }
         }
       }
       .bloque-2 {
-        min-height: 800px;
+        min-height: 700px;
         .imgs-fijas {
           img {
-            min-height: 530px;
+            min-height: 360px;
           }
         }
         .info-home {
           min-height: 250px;
+          h2 {
+            @include font-size(30px);
+          }
           p {
-            @include size(70%,auto);
+            letter-spacing: 1px;
+            @include font-size(25px);
+            @include line-height(30px);
+            //@include size(70%,auto);
           }
         }
       }
     }
     @media #{$breakpoint-laptop-big}{
-      min-height: 850px;
+      min-height: 750px;
       .bloque-1 {
-        min-height: 850px;
+        min-height: 750px;
         .slider-content {
-          min-height: 850px;
+          min-height: 750px;
           .overlay-pantalla {
-            @include size(100%,850px);
+            @include size(100%,750px);
           }
           .slider {
-            min-height: 850px;
+            min-height: 750px;
             img {
-              min-height: 850px;
+              min-height: 750px;
             }
           }
         }
       }
       .bloque-2 {
-        min-height: 850px;
+        min-height: 750px;
         .imgs-fijas {
           img {
-            max-height: 600px;
+            max-height: 570px;
           }
         }
         .info-home {
@@ -698,12 +719,17 @@ header {
       img,source {
         width: 100%;
         object-fit: cover;
+        padding-bottom: 60px;
+        border-bottom: solid 1px $gray;
       }
     }
   }
   &-residencias {
     text-align: center;
     .residencia {
+      p {
+        margin-bottom: 7px;
+      }
       a {
         color: $red;
       }
@@ -715,6 +741,10 @@ header {
       }
     }
   }
+}
+
+.content-home {
+  margin-bottom: 2px;
 }
 
 //Talleres
