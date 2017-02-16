@@ -492,6 +492,7 @@ header {
       flex-direction: column;
       justify-content: center;
       height: 300px;
+      align-items: stretch;
       .info-talleres {
         padding-top: 70px !important;
       }
@@ -585,7 +586,7 @@ header {
           img {
             display: block;
             width: 100%;
-            max-height: 250px;
+            height: 250px;
             object-fit: cover;
           }
         }
@@ -637,6 +638,12 @@ header {
         .imgs-fijas {
           img {
             min-height: 400px;
+          }
+          picture:first-child {
+            width: 50%;
+          }
+          picture:first-child + picture {
+            width: 50%;
           }
         }
         .info-talleres {
@@ -712,7 +719,7 @@ header {
         min-height: 750px;
         .imgs-fijas {
           img {
-            max-height: 570px;
+            height: 500px;
           }
         }
         .info-home {
@@ -720,6 +727,93 @@ header {
         }
       }
     }
+    @media #{$breakpoint-desktop-medium}{
+      min-height:900px;
+      .bloque-1 {
+        min-height: 900px;
+        .slider-content {
+          min-height: 900px;
+          .overlay-pantalla {
+            @include size(100%,900px);
+          }
+          .slider {
+            min-height: 900px;
+            img {
+              min-height: 900px;
+            }
+          }
+        }
+      }
+      .bloque-2 {
+        min-height: 900px;
+        .imgs-fijas {
+          img {
+            height: 600px;
+          }
+        }
+        .info-home {
+          min-height: 300px;
+        }
+      }
+    }
+    @media #{$breakpoint-desktop-big}{
+      min-height: 1000px;
+      .bloque-1 {
+        min-height: 1000px;
+        .slider-content {
+          min-height: 1000px;
+          .overlay-pantalla {
+            @include size(100%,1000px);
+          }
+          .slider {
+            min-height: 1000px;
+            img {
+              min-height: 1000px;
+            }
+          }
+        }
+      }
+      .bloque-2 {
+        min-height: 1000px;
+        .imgs-fijas {
+          img {
+            height: 600px;
+          }
+        }
+        .info-home {
+          min-height: 400px;
+        }
+      }
+    }
+    //@media #{$breakpoint-laptop-big}{
+    //  min-height: 750px;
+    //  .bloque-1 {
+    //    min-height: 750px;
+    //    .slider-content {
+    //      min-height: 750px;
+    //      .overlay-pantalla {
+    //        @include size(100%,800px);
+    //      }
+    //      .slider {
+    //        min-height: 750px;
+    //        img {
+    //          min-height: 750px;
+    //        }
+    //      }
+    //    }
+    //  }
+    //  .bloque-2 {
+    //    min-height: 750px;
+    //    .imgs-fijas {
+    //      img {
+    //        height: 500px;
+    //      }
+    //    }
+    //    .info-home {
+    //      min-height: 250px;
+    //    }
+    //  }
+    //}
   }
   &-acciones {
     picture {
