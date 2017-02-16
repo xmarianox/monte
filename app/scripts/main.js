@@ -48,7 +48,7 @@ function navs(actual){
                 nav.addClass('sticky');
             }
         });
-}
+} //Modificar accion
 
 function links() {
     var botones = $('a');
@@ -69,6 +69,21 @@ function links() {
                 break;
         }
     });
+} //Modificar accion de los links si cambia la navegacion
+
+function smoothNav() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
 }
 
 function setHeader(img) {
@@ -94,12 +109,17 @@ function setHeader(img) {
             break;
     }
     // $('header').css('background-image','url(../images/mobile/Monte-home_intro.jpg)');
-}
+} //Omitir si cambia la navegacion
 
 function setAbout(section) {
     var titulo = $('.about-title');
     var contenido = $('.about-content');
     var consulta = $('#consulta_section span');
+    // $('.about').each(function(index,value){
+    //     if($(value).hasClass === 'about-acciones') {
+    //
+    //     }
+    // });
     if(section === 'home') {
         $('.home-structure').css('display','block');
         $('.other-structure').css('display','none');
@@ -136,7 +156,7 @@ function setAbout(section) {
             break;
         }
     }
-}
+} //Modificar para que complete cuando cargue la pagina en base a about- section
 
 function sectionClick(section){
     var sections = $('.visibility');

@@ -24,6 +24,7 @@
   @include border-box;
 }
 
+
 //General classes
 .visibility {
   display: none;
@@ -350,7 +351,7 @@ header {
    }
 }
 
-#about {
+.about {
   display: flex;
   align-items: center;
   justify-content: center;
