@@ -180,8 +180,8 @@
 // =============================================================================
 @mixin line {
   display: inline-block;
-  width: $button-size;
-  height: 3px;
+  width: 2.3rem;
+  height: 5px;
   vertical-align: middle;
   background: white;
   transition: $button-transition;

@@ -171,9 +171,12 @@ header {
       text-transform: uppercase;
       @include size(100%,70px);
       @include transition(0.4s);
+      .esp-btn {
+        margin-right: 5px;
+      }
       h1 {
         padding-left: 20px;
-        @include font-size(40px);
+        @include font-size(30px);
       }
       ul {
         position: absolute;
@@ -189,7 +192,7 @@ header {
       .btn-hamburger {
         position: absolute;
         top: 20px;
-        right: 20px;
+        right: 12px;
         z-index: 2; //Botón menú
         background: transparent;
         border: none;
@@ -260,6 +263,10 @@ header {
     }
   }
 @media #{$breakpoint-tablet-port} {
+            h1 {
+              padding-left: 20px;
+              @include font-size(40px);
+            }
            .botonera-desktop {
              display: flex;
              flex-direction: row;
@@ -732,6 +739,8 @@ header {
       }
       a {
         color: $red;
+        font-family: $FuturaBook;
+        @include font-size(20px);
       }
       hr {
         border: none;
