@@ -1,5 +1,15 @@
 //Español none en pantalla mobile
 
+function closeNavBar(){
+    if($('.btn-hamburger').hasClass('active')) {
+        $('.btn-hamburger').removeClass('active');
+        $( '.pantalla-mobile' ).css('opacity','0');
+        $( '.pantalla-mobile' ).css('height','0');
+        $( '.pantalla-mobile' ).css('visibility','hidden');
+        $('.bar').css('display','inline-block');
+    }
+}
+
 function mobileVsDesk(){
     var imgsSlider = $('.img-slider');
     var windowWidth = parseInt($(window).width());
@@ -27,7 +37,6 @@ function navs(actual){
     if(actual !== 'home'){
         nav.addClass('sticky');
         if($(nav).hasClass('cabecera')){
-            console.log('yep');
             $('.fondo-header img').css('margin-top','70px');
         }else{
             // $(nav).css('background-color','rgba(0, 0, 0, 0.8)');
@@ -57,15 +66,43 @@ function links() {
             e.preventDefault();
         });
         switch($(value).html()){
-            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home');translate();$('body,html').animate({scrollTop : 0}, 500);});
+            case 'Monte':
+                $(value).click(function(){sectionClick('home');
+                    setAbout('home');setHeader('Monte-home_intro.jpg');
+                    navs('home');
+                    translate();
+                    $('body,html').animate({scrollTop : 0}, 500);
+                    closeNavBar();});
                 break;
-            case 'home': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home');translate();$('body,html').animate({scrollTop : 0}, 500);});
+            case 'home':
+                $(value).click(function(){sectionClick('home');
+                    setAbout('home');setHeader('Monte-home_intro.jpg');
+                    navs('home');
+                    translate();
+                    $('body,html').animate({scrollTop : 0}, 500);
+                    closeNavBar();});
                 break;
-            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones');setHeader('acciones-header.jpg');navs('acciones');translate();$('body,html').animate({scrollTop : 0}, 500);});
+            case 'acciones': $(value).click(function(){sectionClick('acciones');
+                setAbout('acciones');
+                setHeader('acciones-header.jpg');
+                navs('acciones');translate();$('body,html').animate({scrollTop : 0}, 500);
+                closeNavBar();});
                 break;
-            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia');setHeader('residencia-header.jpg');navs('residencia');translate();$('body,html').animate({scrollTop : 0}, 500);});
+            case 'residencia': $(value).click(function(){sectionClick('residencia');
+                setAbout('residencia');
+                setHeader('residencia-header.jpg');
+                navs('residencia');
+                translate();$('body,html').animate({scrollTop : 0}, 500);
+                closeNavBar();});
                 break;
-            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg');navs('talleres');translate();$('body,html').animate({scrollTop : 0}, 500);});
+            case 'talleres': $(value).click(function(){sectionClick('talleres');
+                setAbout('talleres');
+                setHeader('talleres-header.jpg');
+                navs('talleres');
+                translate();
+                $('body,html').animate({scrollTop : 0}, 500);
+                closeNavBar();
+            });
                 break;
         }
     });
@@ -218,15 +255,14 @@ $(document).ready(function(){
             $(this).removeClass('gira');
         }
     });
-
     //Nav Mobie
     $('.btn-hamburger').click(function(){
         if($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $( '.pantalla-mobile' ).css('opacity','0');
-            $( '.pantalla-mobile' ).css('height','0');
-            $( '.pantalla-mobile' ).css('visibility','hidden');
-            $('.bar').css('display','inline-block');
+                $(this).removeClass('active');
+                $( '.pantalla-mobile' ).css('opacity','0');
+                $( '.pantalla-mobile' ).css('height','0');
+                $( '.pantalla-mobile' ).css('visibility','hidden');
+                $('.bar').css('display','inline-block');
         }else{
             $(this).addClass('active');
             $( '.pantalla-mobile' ).css('opacity','1');
