@@ -57,35 +57,19 @@ function links() {
             e.preventDefault();
         });
         switch($(value).html()){
-            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home');translate();});
+            case 'Monte': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home');translate();$('body,html').animate({scrollTop : 0}, 500);});
                 break;
-            case 'home': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home');translate();});
+            case 'home': $(value).click(function(){sectionClick('home');setAbout('home');setHeader('Monte-home_intro.jpg'); navs('home');translate();$('body,html').animate({scrollTop : 0}, 500);});
                 break;
-            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones');setHeader('acciones-header.jpg');navs('acciones');translate();});
+            case 'acciones': $(value).click(function(){sectionClick('acciones');setAbout('acciones');setHeader('acciones-header.jpg');navs('acciones');translate();$('body,html').animate({scrollTop : 0}, 500);});
                 break;
-            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia');setHeader('residencia-header.jpg');navs('residencia');translate();});
+            case 'residencia': $(value).click(function(){sectionClick('residencia');setAbout('residencia');setHeader('residencia-header.jpg');navs('residencia');translate();$('body,html').animate({scrollTop : 0}, 500);});
                 break;
-            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg');navs('talleres');translate();});
+            case 'talleres': $(value).click(function(){sectionClick('talleres');setAbout('talleres');setHeader('talleres-header.jpg');navs('talleres');translate();$('body,html').animate({scrollTop : 0}, 500);});
                 break;
         }
     });
 } //Modificar accion de los links si cambia la navegacion
-
-function smoothNav() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-}
-
 function setHeader(img) {
     var deskImg = $('.fondo-header source');
     var mobileImg = $('.fondo-header img');
@@ -250,6 +234,17 @@ $(document).ready(function(){
             $( '.pantalla-mobile' ).css('visibility','visible');
             $('.bar').css('display','none');
         }
+    });
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('footer'),
+        handler: function(direction) {
+            if(direction === 'down') {
+                $('.logo div').addClass('bounce');
+                console.log('animated');
+            }
+        },
+        offset: '80%'
     });
 
     //Imgs mobile y desk

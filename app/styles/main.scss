@@ -902,6 +902,9 @@ footer {
     }
     padding: 0 0 10px;
     border-bottom: solid 1px $gray;
+    div {
+      @include animationDelay(1.5s,0);
+    }
   }
   nav {
     ul {
