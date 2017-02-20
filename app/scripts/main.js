@@ -204,7 +204,7 @@ function translate(){
 function eng(){
     $('.eng-btn').css('color','white');
     $('.esp-btn').css('color','#929292');
-    $.getJSON('../lang/lang_EN.json').done(function(data){
+    $.getJSON('./lang/lang_EN.json').done(function(data){
         $('.translate-js').each(function(){
             var cadena = $(this).attr('data-string');
             $(this).text(data[cadena]);
@@ -215,7 +215,7 @@ function eng(){
 function esp(){
     $('.esp-btn').css('color','white');
     $('.eng-btn').css('color','#929292');
-    $.getJSON('../lang/lang_ES.json').done(function(data){
+    $.getJSON('./lang/lang_ES.json').done(function(data){
         $('.translate-js').each(function(){
             var cadena = $(this).attr('data-string');
             $(this).text(data[cadena]);
