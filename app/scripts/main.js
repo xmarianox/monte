@@ -63,7 +63,9 @@ function links() {
     var botones = $('a');
     botones.each(function(index, value){
         $(value).click(function (e){
-            e.preventDefault();
+            if(!($(value).hasClass('red'))){
+                e.preventDefault();
+            }
         });
         switch($(value).html()){
             case 'Monte':
