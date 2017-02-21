@@ -24,6 +24,14 @@
   @include border-box;
 }
 
+.monte-svg {
+  width: 100%;
+
+  svg {
+    display: inline-block;
+    @include size(35px,36px);
+  }
+}
 
 //General classes
 .visibility {
