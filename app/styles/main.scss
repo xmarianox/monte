@@ -12,7 +12,7 @@
 
 @import "helpers/variables";
 @import "helpers/mixins";
-@import "helpers/icons";
+//@import "helpers/icons";
 @import "helpers/buttons";
 @import "helpers/fonts";
 @import "layout/grids";
@@ -921,6 +921,7 @@ footer {
       padding: 10px 0;
       @include font-size(18px);
       color: $red;
+      @include animationDelay(1.5s,0);
     }
     padding: 0 0 10px;
     border-bottom: solid 1px $gray;

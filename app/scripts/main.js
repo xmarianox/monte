@@ -278,7 +278,8 @@ $(document).ready(function(){
         element: document.getElementById('footer'),
         handler: function(direction) {
             if(direction === 'down') {
-                $('.logo div').addClass('bounce');
+                $('.logo h1').addClass('bounce');
+                $('.logo h1+div').addClass('bounce');
                 console.log('animated');
             }
         },
