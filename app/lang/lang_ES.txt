@@ -1,5 +1,5 @@
 {
-  "HOME_INTRO": "Monte es un proyecto auto-gestionado por artistas para artistas y personas vinculadas al universo creativo.",
+  "HOME_INTRO": "CENTRO DE ARTES Y OFICIOS",
   "HOME_ACTIONS_TITLE": "ACCIONES",
   "HOME_ACTIONS_P": "encuentros de talleres, exposiciones y presentaciones vinculadas al arte.",
   "HOME_ACTIONS_OVER": "las acciones a lo largo del año se organizan en relación con las artes visuales: la pintura, la escultura y la imagen fija. también se reciben propuestas teniendo a disposición una sala equipada con: sillas, wi-fi, proyector, mesas.",

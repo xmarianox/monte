@@ -364,7 +364,6 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 200px;
   margin: 0 auto;
   p {
     margin: 0 auto;
@@ -376,21 +375,28 @@ header {
     margin: 10px auto;
   }
   .home-structure {
+    padding-top: 50px;
     display: block;
     @include size(90%, auto);
+    p {
+      letter-spacing: 4px;
+      font-family: $FuturaLight;
+    }
     @media #{$breakpoint-tablet-port}{
       @include size(60%, auto);
     }
     @media #{$breakpoint-laptop-big}{
       p {
-        @include font-size(30px);
-        @include line-height(36px);
+        padding: 100px 0;
+        @include font-size(42px);
+        @include line-height(45px);
       }
     }
   }
   .other-structure {
     display: none;
     border-bottom: solid 1px $gray;
+    min-height: 200px;
     h1 {
       font-family: $FuturaLight;
       color: $red;
@@ -501,7 +507,7 @@ header {
           -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
           -ms-filter: "FlipH";
-          filter: FlipH;
+          //filter: FlipH;
         }
         .right-btn {
           right: 5%;
