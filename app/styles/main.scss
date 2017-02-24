@@ -916,6 +916,11 @@ footer {
   text-align: center;
   text-transform: uppercase;
   @include size(100%, auto);
+  .monte-svg svg{
+    display: inline-block;
+    padding-right: 5px;
+    @include size(69px, auto);
+  }
   .logo {
     h1 {
       padding: 10px 0;

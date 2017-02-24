@@ -293,8 +293,10 @@ $(document).ready(function(){
     translate();
     $('.eng-btn').click(function(){
         eng();
+        closeNavBar();
     });
     $('.esp-btn').click(function(){
         esp();
+        closeNavBar();
     });
 });
