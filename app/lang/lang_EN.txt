@@ -1,13 +1,13 @@
 {
   "HOME_INTRO": "ARTS AND CRAFTS CENTER",
   "HOME_ACTIONS_TITLE": "ACTIONS",
-  "HOME_ACTIONS_P": "workshop encounters, expositions and presentations",
-  "HOME_ACTIONS_OVER": "actions are developed and organized throughout the year in relation to visual arts: painting, sculpture and photography. proposals are also accepted for the use of our large exhibition and meeting space that is equipped with wi-fi, projector, speakers, tables and chair.",
+  "HOME_ACTIONS_P": “Workshop encounters, expositions and presentations",
+  "HOME_ACTIONS_OVER": “Actions are developed and organized throughout the year in relation to visual arts: painting, sculpture and photography. Proposals are also accepted for the use of our large exhibition and meeting space that is equipped with wi-fi, projector, speakers, tables and chair.",
   "HOME_WORKSHOPS_TITLE": "WORKSHOPS",
-  "HOME_WORKSHOPS_P": "personal work spaces for visual artists, writers, producers, researchers, editors as well as artists and craft makers, in general: painters, sculptors, photographer and filmmakers.",
-  "HOME_WORKSHOPS_OVER": "there are 10 workshops of varying dimensions and luminosity. rental of these spaces is for a minimum of one year.",
+  "HOME_WORKSHOPS_P": “Personal work spaces for visual artists, writers, producers, researchers, editors as well as artists and craft makers, in general: painters, sculptors, photographer and filmmakers.",
+  "HOME_WORKSHOPS_OVER": “There are 10 workshops of varying dimensions and luminosity. rental of these spaces is for a minimum of one year.",
   "HOME_RESIDENCE_TITLE": "RESIDENCE",
-  "HOME_RESIDENCE_P": "stimulating dialogue through cultural exchange and hospitality, for periods of one to three months.",
-  "HOME_RESIDENCE_OVER": "the residency offers the opportunity for artists and other creative professionals to live and work temporarily outside of their usual environments. the residency program provides an inspirational context and conditions conducive to creativity, as well as practical facilities, connections to local artists and art communities and the potential for exposing work to determined audiences.",
+  "HOME_RESIDENCE_P": “Stimulating dialogue through cultural exchange and hospitality, for periods of one to three months.",
+  "HOME_RESIDENCE_OVER": “The residency offers the opportunity for artists and other creative professionals to live and work temporarily outside of their usual environments. the residency program provides an inspirational context and conditions conducive to creativity, as well as practical facilities, connections to local artists and art communities and the potential for exposing work to determined audiences.",
   "HOME_LINK": "For inquiries about info@residenciamonte.org"
 }
