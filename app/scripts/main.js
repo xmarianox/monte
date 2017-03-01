@@ -88,7 +88,7 @@ function links() {
             }
         });
         switch($(value).html()){
-            case 'Monte':
+            case 'monte':
                 $(value).click(function(){sectionClick('home');
                     setAbout('home');setHeader('Monte-home_intro.jpg');
                     navs('home');
